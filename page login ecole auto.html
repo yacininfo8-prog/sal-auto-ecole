@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#6366f1">
+<title>SAL AUTO ÉCOLE PRO — برنامج تسيير مدارس تعليم السياقة</title>
+<meta name="description" content="SAL AUTO ÉCOLE PRO — برنامج احترافي ومتكامل لتسيير مدارس تعليم السياقة: المترشحون، الدروس، الامتحانات، الدفوعات، الوثائق والتقارير في مكان واحد.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1) المتغيرات العامة — لوحة ألوان عصرية جديدة
+   ============================================================ */
+:root{
+  /* ألوان أساسية حديثة */
+  --primary:#6366f1;
+  --primary-dark:#4f46e5;
+  --primary-light:#818cf8;
+  --violet:#8b5cf6;
+  --fuchsia:#d946ef;
+  --cyan:#06b6d4;
+  --teal:#14b8a6;
+  --emerald:#10b981;
+  --amber:#f59e0b;
+  --orange:#fb923c;
+  --rose:#f43f5e;
+  --pink:#ec4899;
+
+  --dark:#0a0e1a;
+  --dark-2:#131829;
+  --dark-3:#1e2238;
+  --gray:#64748b;
+  --gray-light:#94a3b8;
+  --border:#e5e9f5;
+  --bg:#f5f7fd;
+  --white:#ffffff;
+
+  /* تدرجات عصرية */
+  --grad-1:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#d946ef 100%);
+  --grad-2:linear-gradient(135deg,#06b6d4 0%,#14b8a6 50%,#10b981 100%);
+  --grad-3:linear-gradient(135deg,#f59e0b 0%,#fb923c 50%,#f43f5e 100%);
+  --grad-4:linear-gradient(135deg,#ec4899 0%,#d946ef 50%,#8b5cf6 100%);
+  --grad-dark:linear-gradient(160deg,#0a0e1a 0%,#1a1440 45%,#2a1a5e 100%);
+  --grad-glass:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+
+  /* ظلال متعددة الطبقات للعمق */
+  --shadow-sm:0 1px 2px rgba(15,23,42,.06);
+  --shadow:0 4px 16px rgba(15,23,42,.08);
+  --shadow-lg:0 18px 45px -12px rgba(99,102,241,.25);
+  --shadow-xl:0 30px 70px -20px rgba(99,102,241,.4);
+
+  /* ظلال ثلاثية الأبعاد للأزرار */
+  --btn-3d-primary:0 6px 0 0 #3b2fa8, 0 8px 20px -4px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.3);
+  --btn-3d-primary-hover:0 8px 0 0 #3b2fa8, 0 12px 26px -4px rgba(99,102,241,.6), inset 0 1px 0 rgba(255,255,255,.3);
+  --btn-3d-accent:0 6px 0 0 #047857, 0 8px 20px -4px rgba(16,185,129,.5), inset 0 1px 0 rgba(255,255,255,.3);
+  --btn-3d-accent-hover:0 8px 0 0 #047857, 0 12px 26px -4px rgba(16,185,129,.6), inset 0 1px 0 rgba(255,255,255,.3);
+  --btn-3d-dark:0 6px 0 0 #000, 0 8px 20px -4px rgba(15,23,42,.4), inset 0 1px 0 rgba(255,255,255,.15);
+  --btn-3d-dark-hover:0 8px 0 0 #000, 0 12px 26px -4px rgba(15,23,42,.5), inset 0 1px 0 rgba(255,255,255,.15);
+
+  --radius:18px;
+  --radius-lg:26px;
+  --radius-sm:12px;
+  --container:1200px;
+  --nav-h:72px;
+  --font-ar:'Cairo','Segoe UI',Tahoma,sans-serif;
+  --font-fr:'Inter','Segoe UI',system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-ar);
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.75;
+  overflow-x:hidden;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+html[dir="ltr"] body{font-family:var(--font-fr)}
+img,svg{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font-family:inherit;font-size:inherit}
+ul{list-style:none}
+::selection{background:var(--primary);color:#fff}
+
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:#e8ecf7}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#6366f1,#8b5cf6);border-radius:20px;border:2px solid #e8ecf7}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#4f46e5,#7c3aed)}
+
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:20px}
+.section{padding:90px 0;position:relative}
+.section-alt{background:var(--white)}
+
+/* ============================================================
+   2) الأزرار ثلاثية الأبعاد
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:14px;border:0;
+  font-weight:800;font-size:.96rem;cursor:pointer;
+  transition:all .18s cubic-bezier(.2,.8,.2,1);
+  white-space:nowrap;line-height:1.2;
+  position:relative;
+  letter-spacing:.2px;
+  text-transform:none;
+}
+.btn:active{transform:translateY(4px)!important}
+
+/* الزر الأساسي — 3D بنفسجي */
+.btn-primary{
+  background:linear-gradient(180deg,#7c7ff5 0%,#6366f1 45%,#4f46e5 100%);
+  color:#fff;
+  box-shadow:var(--btn-3d-primary);
+  text-shadow:0 1px 2px rgba(0,0,0,.2);
+}
+.btn-primary:hover{
+  background:linear-gradient(180deg,#8b8efa 0%,#6f72f4 45%,#5a52e6 100%);
+  box-shadow:var(--btn-3d-primary-hover);
+  transform:translateY(-2px);
+}
+
+/* الزر الأخضر — 3D emerald */
+.btn-accent{
+  background:linear-gradient(180deg,#34d399 0%,#10b981 45%,#059669 100%);
+  color:#fff;
+  box-shadow:var(--btn-3d-accent);
+  text-shadow:0 1px 2px rgba(0,0,0,.2);
+}
+.btn-accent:hover{
+  background:linear-gradient(180deg,#4ade80 0%,#22c55e 45%,#16a34a 100%);
+  box-shadow:var(--btn-3d-accent-hover);
+  transform:translateY(-2px);
+}
+
+/* الزر الشفاف — 3D ghost */
+.btn-ghost{
+  background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.08) 100%);
+  color:#fff;border:1.5px solid rgba(255,255,255,.35);
+  backdrop-filter:blur(14px);
+  box-shadow:0 6px 0 0 rgba(0,0,0,.2), 0 8px 20px -4px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn-ghost:hover{
+  background:linear-gradient(180deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.15) 100%);
+  border-color:rgba(255,255,255,.55);
+  transform:translateY(-2px);
+  box-shadow:0 8px 0 0 rgba(0,0,0,.2), 0 12px 26px -4px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+/* الزر الأبيض/المحيطي — 3D outline */
+.btn-outline{
+  background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+  color:var(--dark);
+  border:1.5px solid var(--border);
+  box-shadow:0 6px 0 0 #cbd5e1, 0 8px 20px -4px rgba(15,23,42,.15), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.btn-outline:hover{
+  border-color:var(--primary);
+  color:var(--primary);
+  transform:translateY(-2px);
+  box-shadow:0 8px 0 0 var(--primary-dark), 0 12px 26px -4px rgba(99,102,241,.35), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* الزر الداكن — 3D dark */
+.btn-dark{
+  background:linear-gradient(180deg,#2a3040 0%,#131829 45%,#0a0e1a 100%);
+  color:#fff;
+  box-shadow:var(--btn-3d-dark);
+  text-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+.btn-dark:hover{
+  background:linear-gradient(180deg,#353b4d 0%,#1a2038 45%,#0f1424 100%);
+  box-shadow:var(--btn-3d-dark-hover);
+  transform:translateY(-2px);
+}
+
+/* أحجام */
+.btn-sm{padding:11px 20px;font-size:.86rem;border-radius:11px}
+.btn-lg{padding:18px 38px;font-size:1.05rem;border-radius:16px}
+.btn-block{width:100%}
+
+/* أزرار دائرية عائمة 3D */
+.float-btn{
+  position:fixed;width:58px;height:58px;border-radius:50%;border:0;cursor:pointer;
+  display:grid;place-items:center;z-index:900;
+  transition:all .25s cubic-bezier(.2,.8,.2,1);
+}
+.float-btn:hover{transform:translateY(-4px) scale(1.06)}
+.float-btn:active{transform:translateY(2px) scale(.98)!important}
+
+#waFloat{
+  inset-block-end:26px;inset-inline-start:26px;
+  background:linear-gradient(180deg,#4ade80 0%,#25D366 45%,#128C7E 100%);
+  color:#fff;
+  box-shadow:0 6px 0 0 #0d6b5c, 0 10px 26px -4px rgba(37,211,102,.6), inset 0 1px 0 rgba(255,255,255,.4);
+}
+#waFloat::after{
+  content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;
+  animation:ring 2.2s infinite;pointer-events:none;
+}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+
+#topFloat{
+  inset-block-end:26px;inset-inline-end:26px;
+  background:linear-gradient(180deg,#ffffff 0%,#f1f5f9 100%);
+  color:var(--dark);border:1px solid var(--border);
+  box-shadow:0 6px 0 0 #cbd5e1, 0 8px 20px -4px rgba(15,23,42,.2);
+  opacity:0;pointer-events:none;
+}
+#topFloat.show{opacity:1;pointer-events:auto}
+#topFloat:hover{background:linear-gradient(180deg,#818cf8,#6366f1);color:#fff;border-color:transparent;box-shadow:0 6px 0 0 #3b2fa8, 0 10px 26px -4px rgba(99,102,241,.5)}
+
+#chatFloat{
+  inset-block-end:98px;inset-inline-end:26px;
+  background:linear-gradient(180deg,#a78bfa 0%,#8b5cf6 45%,#7c3aed 100%);
+  color:#fff;width:62px;height:62px;
+  box-shadow:0 6px 0 0 #5b21b6, 0 10px 26px -4px rgba(139,92,246,.6), inset 0 1px 0 rgba(255,255,255,.4);
+}
+#chatFloat .badge{
+  position:absolute;top:-3px;inset-inline-end:-3px;width:18px;height:18px;border-radius:50%;
+  background:linear-gradient(180deg,#f43f5e,#e11d48);border:3px solid #fff;
+  animation:pulse 1.8s infinite;
+  box-shadow:0 2px 6px rgba(244,63,94,.5);
+}
+
+/* ============================================================
+   3) شريط التنقل
+   ============================================================ */
+.navbar{
+  position:fixed;inset-block-start:0;inset-inline:0;height:var(--nav-h);
+  z-index:1000;display:flex;align-items:center;
+  background:rgba(255,255,255,.86);backdrop-filter:blur(22px) saturate(180%);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);
+  border-bottom:1px solid transparent;transition:.3s;
+}
+.navbar.scrolled{
+  border-bottom-color:var(--border);
+  box-shadow:0 6px 26px -14px rgba(99,102,241,.3);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%}
+
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-mark{
+  width:44px;height:44px;border-radius:14px;
+  background:linear-gradient(145deg,#818cf8 0%,#6366f1 40%,#4f46e5 100%);
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:1.02rem;
+  box-shadow:0 4px 0 0 #3730a3, 0 8px 20px -4px rgba(99,102,241,.6), inset 0 1px 0 rgba(255,255,255,.4);
+  letter-spacing:-.5px;flex-shrink:0;
+}
+.logo-text{display:flex;flex-direction:column;line-height:1.05}
+.logo-text b{font-size:1.02rem;font-weight:900;letter-spacing:.4px;color:var(--dark)}
+.logo-text span{font-size:.62rem;font-weight:700;letter-spacing:1.6px;color:var(--primary);text-transform:uppercase}
+
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  padding:10px 15px;border-radius:11px;font-weight:700;font-size:.9rem;color:#475569;
+  transition:.22s;position:relative;
+}
+.nav-links a:hover{
+  color:var(--primary);
+  background:linear-gradient(180deg,rgba(99,102,241,.12),rgba(99,102,241,.05));
+}
+.nav-actions{display:flex;align-items:center;gap:10px}
+
+.lang-switch{
+  display:flex;background:linear-gradient(180deg,#f1f5f9,#e8ecf7);
+  border-radius:12px;padding:4px;gap:2px;
+  border:1px solid var(--border);
+  box-shadow:inset 0 2px 4px rgba(15,23,42,.06);
+}
+.lang-switch button{
+  border:0;background:transparent;padding:8px 14px;border-radius:9px;cursor:pointer;
+  font-weight:800;font-size:.8rem;color:#64748b;transition:.22s;white-space:nowrap;
+}
+.lang-switch button.active{
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+  color:var(--primary);
+  box-shadow:0 2px 4px rgba(99,102,241,.2), inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.burger{
+  display:none;flex-direction:column;gap:5px;justify-content:center;align-items:center;
+  width:44px;height:44px;border-radius:12px;border:1px solid var(--border);
+  background:linear-gradient(180deg,#fff,#f8fafc);cursor:pointer;transition:.2s;flex-shrink:0;
+  box-shadow:0 3px 0 0 #cbd5e1;
+}
+.burger:hover{border-color:var(--primary);box-shadow:0 3px 0 0 var(--primary-dark)}
+.burger span{display:block;width:20px;height:2.4px;background:var(--dark);border-radius:3px;transition:.3s}
+.burger.open span:nth-child(1){transform:translateY(7.4px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(.3)}
+.burger.open span:nth-child(3){transform:translateY(-7.4px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;inset-block-start:var(--nav-h);inset-inline:0;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:16px 20px 26px;z-index:999;display:flex;flex-direction:column;gap:6px;
+  transform:translateY(-130%);transition:transform .38s cubic-bezier(.2,.9,.25,1);
+  box-shadow:0 24px 40px -22px rgba(99,102,241,.35);max-height:calc(100vh - var(--nav-h));overflow-y:auto;
+}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{padding:13px 16px;border-radius:12px;font-weight:700;color:#334155;transition:.2s}
+.mobile-menu a:hover{background:linear-gradient(180deg,rgba(99,102,241,.12),rgba(99,102,241,.06));color:var(--primary)}
+.mobile-menu .btn{margin-top:8px}
+
+/* ============================================================
+   4) الأقسام والبطاقات
+   ============================================================ */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:800;letter-spacing:.7px;
+  color:var(--primary);
+  background:linear-gradient(180deg,rgba(99,102,241,.12),rgba(99,102,241,.06));
+  padding:8px 18px;border-radius:100px;margin-bottom:16px;
+  text-transform:uppercase;
+  border:1px solid rgba(99,102,241,.18);
+  box-shadow:0 2px 8px rgba(99,102,241,.1), inset 0 1px 0 rgba(255,255,255,.8);
+}
+.eyebrow.green{color:#047857;background:linear-gradient(180deg,rgba(16,185,129,.12),rgba(16,185,129,.05));border-color:rgba(16,185,129,.2)}
+.eyebrow.purple{color:#6d28d9;background:linear-gradient(180deg,rgba(139,92,246,.12),rgba(139,92,246,.05));border-color:rgba(139,92,246,.2)}
+.eyebrow.amber{color:#b45309;background:linear-gradient(180deg,rgba(245,158,11,.15),rgba(245,158,11,.06));border-color:rgba(245,158,11,.25)}
+
+h1,h2,h3,h4{line-height:1.3;font-weight:800;color:var(--dark)}
+.section-title{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:14px;letter-spacing:-.7px}
+.section-sub{color:var(--gray);font-size:clamp(.95rem,2vw,1.08rem);max-width:680px;margin-inline:auto}
+.section-head{text-align:center;margin-bottom:56px}
+
+/* البطاقات */
+.grid{display:grid;gap:22px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+
+.card{
+  background:linear-gradient(180deg,#ffffff 0%,#fdfdff 100%);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px 24px;
+  transition:all .32s cubic-bezier(.2,.8,.2,1);
+  position:relative;overflow:hidden;height:100%;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 8px 24px -12px rgba(99,102,241,.12);
+}
+.card::before{
+  content:"";position:absolute;inset-block-start:0;inset-inline-start:0;width:100%;height:3px;
+  background:var(--grad-1);transform:scaleX(0);transform-origin:inline-start;transition:transform .4s;
+}
+.card::after{
+  content:"";position:absolute;inset-inline-end:-30px;inset-block-start:-30px;
+  width:100px;height:100px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.12),transparent 70%);
+  opacity:0;transition:opacity .4s;pointer-events:none;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 24px 50px -12px rgba(99,102,241,.28);
+  border-color:#dbe3ef;
+}
+.card:hover::before{transform:scaleX(1)}
+.card:hover::after{opacity:1}
+.card h3{font-size:1.06rem;margin-bottom:9px;font-weight:800}
+.card p{color:var(--gray);font-size:.9rem;line-height:1.7}
+
+/* أيقونات 3D */
+.icon-box{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
+  margin-bottom:18px;color:#fff;flex-shrink:0;
+  position:relative;transition:.3s;
+}
+.icon-box::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  background:linear-gradient(180deg,rgba(255,255,255,.35),transparent 55%);
+  pointer-events:none;
+}
+.ib-blue{background:linear-gradient(180deg,#818cf8 0%,#6366f1 45%,#4f46e5 100%);box-shadow:0 4px 0 0 #3730a3, 0 8px 20px -4px rgba(99,102,241,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-green{background:linear-gradient(180deg,#34d399 0%,#10b981 45%,#059669 100%);box-shadow:0 4px 0 0 #047857, 0 8px 20px -4px rgba(16,185,129,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-amber{background:linear-gradient(180deg,#fbbf24 0%,#f59e0b 45%,#d97706 100%);box-shadow:0 4px 0 0 #b45309, 0 8px 20px -4px rgba(245,158,11,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-dark{background:linear-gradient(180deg,#475569 0%,#334155 45%,#0f172a 100%);box-shadow:0 4px 0 0 #000, 0 8px 20px -4px rgba(15,23,42,.6), inset 0 1px 0 rgba(255,255,255,.2)}
+.ib-purple{background:linear-gradient(180deg,#a78bfa 0%,#8b5cf6 45%,#7c3aed 100%);box-shadow:0 4px 0 0 #5b21b6, 0 8px 20px -4px rgba(139,92,246,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-cyan{background:linear-gradient(180deg,#22d3ee 0%,#06b6d4 45%,#0891b2 100%);box-shadow:0 4px 0 0 #0e7490, 0 8px 20px -4px rgba(6,182,212,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-rose{background:linear-gradient(180deg,#fb7185 0%,#f43f5e 45%,#e11d48 100%);box-shadow:0 4px 0 0 #9f1239, 0 8px 20px -4px rgba(244,63,94,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.ib-indigo{background:linear-gradient(180deg,#818cf8 0%,#6366f1 45%,#4338ca 100%);box-shadow:0 4px 0 0 #312e81, 0 8px 20px -4px rgba(79,70,229,.6), inset 0 1px 0 rgba(255,255,255,.4)}
+.card:hover .icon-box{transform:translateY(-3px) rotate(-3deg)}
+
+/* ============================================================
+   5) Hero
+   ============================================================ */
+.hero{
+  position:relative;padding:calc(var(--nav-h) + 70px) 0 90px;
+  background:var(--grad-dark);color:#fff;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.45),transparent 62%);
+  top:-400px;inset-inline-end:-260px;pointer-events:none;
+  animation:floatOrb 18s ease-in-out infinite;
+}
+.hero::after{
+  content:"";position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(6,182,212,.35),transparent 65%);
+  bottom:-360px;inset-inline-start:-220px;pointer-events:none;
+  animation:floatOrb 22s ease-in-out infinite reverse;
+}
+@keyframes floatOrb{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.08)}}
+
+.hero-grid{
+  position:relative;z-index:2;display:grid;
+  grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--grad-glass);
+  border:1px solid rgba(255,255,255,.22);
+  padding:9px 18px;border-radius:100px;
+  font-size:.82rem;font-weight:700;margin-bottom:22px;backdrop-filter:blur(14px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
+}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+.hero h1{
+  font-size:clamp(2.1rem,5.5vw,3.6rem);font-weight:900;color:#fff;
+  letter-spacing:-1.2px;line-height:1.08;margin-bottom:14px;
+}
+.hero h1 .grad{
+  background:linear-gradient(100deg,#a78bfa,#d946ef 45%,#22d3ee);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-tagline{font-size:clamp(1rem,2.4vw,1.25rem);font-weight:700;color:#cbd5e1;margin-bottom:18px}
+.hero-desc{color:#94a3b8;font-size:clamp(.95rem,2vw,1.06rem);max-width:560px;margin-bottom:34px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:32px}
+.hero-mini{display:flex;flex-wrap:wrap;gap:20px;color:#94a3b8;font-size:.86rem;font-weight:600}
+.hero-mini span{display:inline-flex;align-items:center;gap:7px}
+.hero-mini svg{color:#34d399;flex-shrink:0}
+
+/* موك أب */
+.mockup{
+  border-radius:16px;overflow:hidden;background:#0d1224;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 40px 90px -20px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05) inset;
+  transform:perspective(1600px) rotateY(-7deg) rotateX(3deg);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.mockup:hover{transform:perspective(1600px) rotateY(0) rotateX(0)}
+html[dir="ltr"] .mockup{transform:perspective(1600px) rotateY(7deg) rotateX(3deg)}
+html[dir="ltr"] .mockup:hover{transform:perspective(1600px) rotateY(0) rotateX(0)}
+
+.mock-bar{
+  display:flex;align-items:center;gap:10px;padding:11px 14px;
+  background:linear-gradient(180deg,#1e2545,#151a30);border-bottom:1px solid rgba(255,255,255,.07);
+}
+.mock-dots{display:flex;gap:6px}
+.mock-dots i{width:11px;height:11px;border-radius:50%;display:block}
+.mock-dots i:nth-child(1){background:#ff5f57;box-shadow:inset 0 -2px 0 rgba(0,0,0,.15)}
+.mock-dots i:nth-child(2){background:#febc2e;box-shadow:inset 0 -2px 0 rgba(0,0,0,.15)}
+.mock-dots i:nth-child(3){background:#28c840;box-shadow:inset 0 -2px 0 rgba(0,0,0,.15)}
+.mock-title{
+  flex:1;text-align:center;font-size:.72rem;color:#94a3b8;font-weight:700;
+  letter-spacing:.5px;padding-inline-end:40px;
+}
+.mock-body{display:flex;min-height:330px;background:#f8fafc}
+
+.mock-side{
+  width:140px;background:linear-gradient(180deg,#111833,#0d1224);
+  padding:14px 10px;display:flex;flex-direction:column;gap:5px;flex-shrink:0;
+}
+.mock-side .brand{
+  display:flex;align-items:center;gap:7px;color:#fff;font-weight:900;font-size:.68rem;
+  padding:0 6px 12px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px;letter-spacing:.3px;
+}
+.mock-side .brand i{
+  width:22px;height:22px;border-radius:7px;
+  background:linear-gradient(145deg,#818cf8,#6366f1);
+  display:grid;place-items:center;font-size:.6rem;font-style:normal;flex-shrink:0;
+  box-shadow:0 2px 0 0 #3730a3, 0 4px 10px -2px rgba(99,102,241,.5);
+}
+.mock-link{
+  display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:8px;
+  font-size:.66rem;color:#7c8aa5;font-weight:600;
+}
+.mock-link.on{
+  background:linear-gradient(180deg,rgba(139,92,246,.28),rgba(99,102,241,.18));
+  color:#c4b5fd;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+.mock-link i{width:12px;height:12px;border-radius:3px;background:currentColor;opacity:.5;display:block;flex-shrink:0}
+
+.mock-main{flex:1;padding:14px;display:flex;flex-direction:column;gap:11px;min-width:0}
+.mock-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mock-head h4{font-size:.78rem;font-weight:800;color:#0f172a;margin:0}
+.mock-head .pill{
+  background:linear-gradient(180deg,#8b5cf6,#6366f1);color:#fff;font-size:.58rem;font-weight:800;
+  padding:5px 11px;border-radius:100px;
+  box-shadow:0 2px 0 0 #3730a3, 0 4px 8px -2px rgba(99,102,241,.5);
+}
+.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mock-stat{
+  background:linear-gradient(180deg,#fff,#fbfcff);border:1px solid #e8edf5;border-radius:10px;padding:10px 11px;
+  box-shadow:0 1px 3px rgba(15,23,42,.05), 0 4px 10px -6px rgba(99,102,241,.15);
+}
+.mock-stat b{display:block;font-size:1rem;font-weight:900;color:#0f172a;line-height:1.2}
+.mock-stat span{font-size:.56rem;color:#94a3b8;font-weight:700;letter-spacing:.2px}
+.mock-stat .bar{height:4px;border-radius:3px;background:#eef2f8;margin-top:7px;overflow:hidden}
+.mock-stat .bar i{display:block;height:100%;border-radius:3px}
+
+.mock-table{background:#fff;border:1px solid #e8edf5;border-radius:10px;overflow:hidden;flex:1;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.mock-row{
+  display:grid;grid-template-columns:1.6fr 1fr .8fr;gap:8px;align-items:center;
+  padding:9px 12px;border-bottom:1px solid #f1f5f9;font-size:.63rem;
+}
+.mock-row:last-child{border-bottom:0}
+.mock-row.head{background:linear-gradient(180deg,#f8fafc,#f1f5f9);font-weight:800;color:#64748b;font-size:.56rem;letter-spacing:.4px}
+.mock-row .nm{display:flex;align-items:center;gap:7px;font-weight:700;color:#1e293b}
+.mock-row .av{
+  width:22px;height:22px;border-radius:50%;color:#fff;
+  display:grid;place-items:center;font-size:.52rem;font-weight:900;flex-shrink:0;
+  background:linear-gradient(145deg,#a78bfa,#7c3aed);
+  box-shadow:0 2px 0 0 #5b21b6;
+}
+.mock-row:nth-child(3) .av{background:linear-gradient(145deg,#34d399,#059669);box-shadow:0 2px 0 0 #047857}
+.mock-row:nth-child(4) .av{background:linear-gradient(145deg,#fbbf24,#d97706);box-shadow:0 2px 0 0 #b45309}
+.mock-row:nth-child(5) .av{background:linear-gradient(145deg,#22d3ee,#0891b2);box-shadow:0 2px 0 0 #0e7490}
+.mock-tag{
+  font-size:.52rem;font-weight:800;padding:3px 8px;border-radius:100px;text-align:center;
+  display:inline-block;white-space:nowrap;
+}
+.tag-green{background:linear-gradient(180deg,#d1fae5,#a7f3d0);color:#047857;box-shadow:0 1px 0 rgba(4,120,87,.2)}
+.tag-blue{background:linear-gradient(180deg,#dbeafe,#bfdbfe);color:#1d4ed8;box-shadow:0 1px 0 rgba(29,78,216,.2)}
+.tag-amber{background:linear-gradient(180deg,#fef3c7,#fde68a);color:#b45309;box-shadow:0 1px 0 rgba(180,83,9,.2)}
+
+.float-slow{animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* ============================================================
+   6) شريط الثقة
+   ============================================================ */
+.trust{
+  background:linear-gradient(180deg,#ffffff,#f8fafd);
+  border-bottom:1px solid var(--border);padding:26px 0;
+}
+.trust-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 34px}
+.trust-item{
+  display:flex;align-items:center;gap:9px;font-weight:700;font-size:.88rem;color:#334155;
+}
+.trust-item svg{color:var(--emerald);flex-shrink:0}
+
+/* ============================================================
+   7) Split
+   ============================================================ */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split.reverse .split-media{order:-1}
+.split h2{font-size:clamp(1.5rem,3.4vw,2.2rem);margin-bottom:14px;letter-spacing:-.6px}
+.split .lead{color:var(--gray);font-size:1rem;margin-bottom:26px}
+
+.check-list{display:grid;gap:11px}
+.check-list li{
+  display:flex;align-items:flex-start;gap:11px;font-size:.92rem;color:#334155;font-weight:600;
+  padding:11px 15px;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:12px;transition:.26s;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
+}
+.check-list li:hover{
+  border-color:var(--primary-light);
+  transform:translateX(4px);
+  box-shadow:0 6px 18px -8px rgba(99,102,241,.3);
+}
+html[dir="ltr"] .check-list li:hover{transform:translateX(-4px)}
+.check-list .ck{
+  width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(180deg,#34d399,#059669);
+  color:#fff;
+  display:grid;place-items:center;flex-shrink:0;margin-top:2px;
+  box-shadow:0 2px 0 0 #047857, 0 3px 8px -2px rgba(16,185,129,.5);
+}
+.check-list.two-col{grid-template-columns:1fr 1fr}
+
+/* ============================================================
+   8) بطاقات الوثائق
+   ============================================================ */
+.doc-card{
+  display:flex;align-items:center;gap:15px;padding:20px 20px;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:16px;transition:.3s;position:relative;overflow:hidden;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 4px 12px -6px rgba(99,102,241,.1);
+}
+.doc-card::before{
+  content:"";position:absolute;inset-block:0;inset-inline-start:0;width:4px;
+  background:var(--grad-1);transform:scaleY(0);transition:transform .3s;transform-origin:top;
+}
+.doc-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 20px 40px -12px rgba(99,102,241,.3);
+  border-color:#dbe3ef;
+}
+.doc-card:hover::before{transform:scaleY(1)}
+.doc-ico{
+  width:46px;height:46px;border-radius:13px;
+  background:linear-gradient(180deg,#f1f5f9,#e2e8f0);
+  display:grid;place-items:center;color:var(--primary);flex-shrink:0;transition:.3s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 2px 0 0 #cbd5e1;
+}
+.doc-card:hover .doc-ico{
+  background:linear-gradient(180deg,#818cf8,#4f46e5);color:#fff;
+  box-shadow:0 3px 0 0 #3730a3, 0 6px 14px -4px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.doc-card b{display:block;font-size:.92rem;font-weight:800;color:var(--dark)}
+.doc-card small{color:var(--gray);font-size:.78rem}
+
+/* ============================================================
+   9) Dashboard
+   ============================================================ */
+.dash{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:24px;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 24px 60px -20px rgba(99,102,241,.25);
+}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.dash-card{
+  border:1px solid var(--border);border-radius:14px;padding:18px;
+  background:linear-gradient(180deg,#fff,#fbfcff);transition:.28s;
+  box-shadow:0 1px 3px rgba(15,23,42,.04);
+}
+.dash-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px -10px rgba(99,102,241,.25);
+}
+.dash-card .lbl{font-size:.72rem;color:var(--gray);font-weight:800;margin-bottom:5px;letter-spacing:.3px}
+.dash-card .val{font-size:1.45rem;font-weight:900;color:var(--dark);line-height:1.15}
+.dash-card .chg{font-size:.68rem;font-weight:800;margin-top:4px;display:inline-block}
+.chg-up{color:var(--emerald)}
+.chg-dn{color:var(--rose)}
+
+.chart{display:flex;align-items:flex-end;gap:9px;height:130px;padding:16px 6px 0;border-top:1px solid var(--border)}
+.chart .col{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;height:100%;justify-content:flex-end}
+.chart .bar{
+  width:100%;max-width:38px;border-radius:8px 8px 3px 3px;
+  background:linear-gradient(180deg,#a78bfa,#6366f1);
+  transition:height .8s cubic-bezier(.2,.9,.25,1);min-height:6px;
+  box-shadow:0 3px 0 0 rgba(55,48,163,.4), 0 6px 12px -4px rgba(99,102,241,.3);
+}
+.chart .col:nth-child(even) .bar{
+  background:linear-gradient(180deg,#22d3ee,#0891b2);
+  box-shadow:0 3px 0 0 rgba(14,116,144,.4), 0 6px 12px -4px rgba(6,182,212,.3);
+}
+.chart .col span{font-size:.6rem;color:var(--gray);font-weight:700}
+
+/* ============================================================
+   10) WhatsApp section
+   ============================================================ */
+.wa-section{
+  background:linear-gradient(150deg,#042f2e 0%,#064e3b 45%,#065f46 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.wa-section::before{
+  content:"";position:absolute;width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(52,211,153,.32),transparent 65%);
+  top:-300px;inset-inline-end:-180px;animation:floatOrb 18s ease-in-out infinite;
+}
+.wa-section::after{
+  content:"";position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(6,182,212,.28),transparent 65%);
+  bottom:-240px;inset-inline-start:-140px;animation:floatOrb 22s ease-in-out infinite reverse;
+}
+.wa-section .container{position:relative;z-index:2}
+.wa-section .section-title,.wa-section h2{color:#fff}
+.wa-section .section-sub{color:#a7f3d0}
+.wa-section .eyebrow{background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.08));color:#a7f3d0;border-color:rgba(255,255,255,.2)}
+.wa-list{display:grid;gap:11px}
+.wa-list li{
+  display:flex;align-items:center;gap:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.18);
+  padding:14px 18px;border-radius:13px;
+  font-weight:600;font-size:.9rem;backdrop-filter:blur(8px);transition:.26s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+}
+.wa-list li:hover{
+  background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.1));
+  transform:translateX(5px);
+}
+html[dir="ltr"] .wa-list li:hover{transform:translateX(-5px)}
+.wa-list svg{color:#6ee7b7;flex-shrink:0}
+
+/* ============================================================
+   11) Requirements
+   ============================================================ */
+.req-card{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:16px;padding:24px;
+  display:flex;gap:16px;align-items:flex-start;transition:.3s;height:100%;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 8px 24px -12px rgba(99,102,241,.12);
+}
+.req-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 20px 45px -12px rgba(99,102,241,.28);
+  border-color:#dbe3ef;
+}
+.req-card .icon-box{margin-bottom:0;width:48px;height:48px;border-radius:13px}
+.req-card b{display:block;font-size:.95rem;font-weight:800;margin-bottom:4px}
+.req-card p{font-size:.84rem;color:var(--gray);line-height:1.65}
+
+/* ============================================================
+   12) Demo Band
+   ============================================================ */
+.demo-band{
+  background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 45%,#d946ef 100%);
+  border-radius:var(--radius-lg);padding:58px 44px;text-align:center;
+  color:#fff;position:relative;overflow:hidden;
+  box-shadow:0 30px 70px -25px rgba(139,92,246,.65), 0 0 0 1px rgba(255,255,255,.1) inset;
+}
+.demo-band::before{
+  content:"";position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.25),transparent 62%);
+  top:-280px;inset-inline-start:-180px;
+}
+.demo-band::after{
+  content:"";position:absolute;width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(6,182,212,.4),transparent 65%);
+  bottom:-240px;inset-inline-end:-160px;
+}
+.demo-band > *{position:relative;z-index:2}
+.demo-band h2{color:#fff;font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px}
+.demo-band p{color:rgba(255,255,255,.95);max-width:620px;margin:0 auto 30px;font-size:1.02rem}
+.demo-band .btn-outline{
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.1));
+  color:#fff;border-color:rgba(255,255,255,.4);
+  box-shadow:0 6px 0 0 rgba(0,0,0,.2), 0 8px 20px -4px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.demo-band .btn-outline:hover{
+  background:linear-gradient(180deg,#fff,#f8fafc);
+  color:var(--primary);border-color:#fff;
+  box-shadow:0 8px 0 0 rgba(0,0,0,.15), 0 12px 26px -4px rgba(0,0,0,.3);
+}
+
+/* ============================================================
+   13) Pricing
+   ============================================================ */
+.price-card{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:2px solid var(--border);border-radius:var(--radius-lg);
+  padding:40px 32px;text-align:center;position:relative;transition:.32s;
+  max-width:520px;margin-inline:auto;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 20px 50px -20px rgba(99,102,241,.2);
+}
+.price-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 40px 80px -20px rgba(139,92,246,.4);
+  border-color:var(--primary-light);
+}
+.price-badge{
+  position:absolute;top:-16px;inset-inline-start:50%;transform:translateX(50%);
+  background:linear-gradient(180deg,#a78bfa,#7c3aed);color:#fff;
+  font-size:.72rem;font-weight:800;
+  padding:8px 20px;border-radius:100px;white-space:nowrap;letter-spacing:.5px;
+  box-shadow:0 4px 0 0 #5b21b6, 0 8px 20px -6px rgba(139,92,246,.6), inset 0 1px 0 rgba(255,255,255,.3);
+}
+html[dir="ltr"] .price-badge{transform:translateX(-50%)}
+.price-value{font-size:2rem;font-weight:900;color:var(--dark);margin:16px 0 8px;letter-spacing:-1.2px}
+.price-note{color:var(--gray);font-size:.88rem;margin-bottom:28px}
+.price-feats{display:grid;gap:12px;text-align:start;margin-bottom:32px}
+.price-feats li{display:flex;align-items:center;gap:11px;font-size:.9rem;color:#334155;font-weight:600}
+.price-feats svg{color:var(--emerald);flex-shrink:0}
+
+/* ============================================================
+   14) Form
+   ============================================================ */
+.form-card{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:36px;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 20px 50px -20px rgba(99,102,241,.18);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.82rem;font-weight:800;color:#334155;letter-spacing:.2px}
+.field input,.field textarea,.field select{
+  width:100%;padding:14px 16px;border:1.6px solid var(--border);border-radius:12px;
+  background:linear-gradient(180deg,#fbfcfe,#f6f8fd);
+  transition:.24s;font-size:.92rem;color:var(--dark);outline:none;
+  box-shadow:inset 0 2px 4px rgba(15,23,42,.04);
+}
+.field textarea{resize:vertical;min-height:120px;line-height:1.7}
+.field input:focus,.field textarea:focus,.field select:focus{
+  border-color:var(--primary);background:#fff;
+  box-shadow:inset 0 2px 4px rgba(15,23,42,.04), 0 0 0 4px rgba(99,102,241,.14);
+}
+.field input::placeholder,.field textarea::placeholder{color:#a8b3c5}
+
+.form-msg{
+  margin-top:16px;padding:14px 18px;border-radius:13px;font-size:.88rem;font-weight:700;
+  display:none;align-items:center;gap:10px;
+}
+.form-msg.show{display:flex;animation:fadeUp .4s ease}
+.form-msg.ok{background:linear-gradient(180deg,#d1fae5,#a7f3d0);color:#065f46;border:1px solid #6ee7b7;box-shadow:0 2px 0 0 rgba(6,95,70,.15)}
+.form-msg.info{background:linear-gradient(180deg,#dbeafe,#bfdbfe);color:#1e40af;border:1px solid #93c5fd;box-shadow:0 2px 0 0 rgba(30,64,175,.15)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.contact-cards{display:grid;gap:16px}
+.cc{
+  display:flex;align-items:center;gap:16px;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);
+  border-radius:16px;padding:22px;transition:.3s;
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 4px 12px -6px rgba(99,102,241,.1);
+}
+.cc:hover{
+  transform:translateY(-4px);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 16px 36px -12px rgba(99,102,241,.28);
+  border-color:#dbe3ef;
+}
+.cc .icon-box{margin-bottom:0;width:50px;height:50px;border-radius:14px}
+.cc b{display:block;font-size:.78rem;color:var(--gray);font-weight:800;letter-spacing:.4px;text-transform:uppercase}
+.cc span{font-size:.98rem;font-weight:800;color:var(--dark);word-break:break-all}
+
+/* ============================================================
+   15) FAQ
+   ============================================================ */
+.faq-list{max-width:820px;margin-inline:auto;display:grid;gap:12px}
+.faq-item{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.28s;
+  box-shadow:0 1px 3px rgba(15,23,42,.04);
+}
+.faq-item.open{
+  border-color:var(--primary-light);
+  box-shadow:0 1px 3px rgba(15,23,42,.04), 0 12px 30px -12px rgba(99,102,241,.28);
+}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 24px;background:transparent;border:0;cursor:pointer;text-align:start;
+  font-weight:800;font-size:.96rem;color:var(--dark);transition:.2s;line-height:1.5;
+}
+.faq-q:hover{color:var(--primary)}
+.faq-ico{
+  width:30px;height:30px;border-radius:9px;
+  background:linear-gradient(180deg,#f1f5f9,#e2e8f0);
+  display:grid;place-items:center;flex-shrink:0;transition:.32s;color:var(--primary);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 2px 0 0 #cbd5e1;
+}
+.faq-item.open .faq-ico{
+  background:linear-gradient(180deg,#a78bfa,#7c3aed);color:#fff;
+  transform:rotate(45deg);
+  box-shadow:0 2px 0 0 #5b21b6, 0 4px 12px -4px rgba(139,92,246,.5);
+}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.9,.25,1),padding .3s;padding:0 24px}
+.faq-item.open .faq-a{max-height:420px;padding:0 24px 24px}
+.faq-a p{color:var(--gray);font-size:.9rem;line-height:1.8}
+
+/* ============================================================
+   16) CTA
+   ============================================================ */
+.cta{
+  background:var(--grad-dark);color:#fff;text-align:center;padding:100px 0;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:"";position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.4),transparent 62%);
+  top:-450px;inset-inline-start:50%;transform:translateX(50%);
+  animation:floatOrb 20s ease-in-out infinite;
+}
+.cta::after{
+  content:"";position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(6,182,212,.3),transparent 65%);
+  bottom:-300px;inset-inline-end:-180px;
+  animation:floatOrb 24s ease-in-out infinite reverse;
+}
+.cta > *{position:relative;z-index:2}
+.cta h2{color:#fff;font-size:clamp(1.7rem,4.2vw,2.6rem);margin-bottom:16px;letter-spacing:-.6px}
+.cta p{color:#94a3b8;max-width:660px;margin:0 auto 36px;font-size:1.03rem}
+.cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+
+/* ============================================================
+   17) Footer
+   ============================================================ */
+.footer{background:linear-gradient(180deg,#070b14,#0a0e1a);color:#94a3b8;padding:70px 0 0;position:relative}
+.footer::before{
+  content:"";position:absolute;top:0;inset-inline:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(139,92,246,.4),transparent);
+}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:46px}
+.footer h4{color:#fff;font-size:.98rem;margin-bottom:18px;font-weight:800;letter-spacing:.3px}
+.footer .logo-text b{color:#fff}
+.footer .logo-text span{color:#a78bfa}
+.footer-desc{font-size:.88rem;line-height:1.8;margin:16px 0 20px;max-width:330px}
+.footer-links{display:grid;gap:11px}
+.footer-links a{font-size:.88rem;transition:.22s;display:inline-block}
+.footer-links a:hover{color:#a78bfa;transform:translateX(4px)}
+html[dir="ltr"] .footer-links a:hover{transform:translateX(-4px)}
+.footer-contact li{display:flex;align-items:center;gap:11px;font-size:.88rem;margin-bottom:13px}
+.footer-contact svg{color:#a78bfa;flex-shrink:0}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);padding:26px 0;
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  font-size:.82rem;
+}
+
+/* ============================================================
+   18) Chat
+   ============================================================ */
+.chat-win{
+  position:fixed;inset-block-end:172px;inset-inline-end:26px;width:390px;max-width:calc(100vw - 40px);
+  height:560px;max-height:calc(100vh - 210px);
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border-radius:22px;
+  box-shadow:0 40px 90px -20px rgba(15,23,42,.45), 0 0 0 1px rgba(99,102,241,.15);
+  z-index:950;display:flex;flex-direction:column;overflow:hidden;
+  opacity:0;transform:translateY(22px) scale(.96);pointer-events:none;
+  transition:.38s cubic-bezier(.2,.9,.25,1);
+}
+.chat-win.open{opacity:1;transform:none;pointer-events:auto}
+
+.chat-head{
+  background:linear-gradient(135deg,#8b5cf6 0%,#6366f1 60%,#4f46e5 100%);
+  color:#fff;padding:18px 20px;display:flex;align-items:center;gap:13px;
+  flex-shrink:0;position:relative;overflow:hidden;
+}
+.chat-head::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 100% 0%,rgba(255,255,255,.2),transparent 60%);
+  pointer-events:none;
+}
+.chat-head > *{position:relative;z-index:2}
+.chat-head .av{
+  width:44px;height:44px;border-radius:14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.15));
+  display:grid;place-items:center;font-size:1.25rem;flex-shrink:0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3);
+}
+.chat-head b{display:block;font-size:.95rem;font-weight:800}
+.chat-head small{font-size:.72rem;opacity:.9;display:flex;align-items:center;gap:5px}
+.chat-head small::before{content:"";width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80}
+.chat-close{
+  margin-inline-start:auto;
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.1));
+  border:0;color:#fff;
+  width:34px;height:34px;border-radius:10px;cursor:pointer;display:grid;place-items:center;
+  transition:.2s;flex-shrink:0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
+}
+.chat-close:hover{background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.2))}
+
+.chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:12px;background:#f8fafc}
+.msg{max-width:86%;padding:12px 16px;border-radius:16px;font-size:.87rem;line-height:1.65;animation:fadeUp .35s ease;word-wrap:break-word}
+.msg.bot{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);color:#1e293b;border-end-start-radius:5px;align-self:flex-start;
+  box-shadow:0 1px 3px rgba(15,23,42,.05);
+}
+.msg.user{
+  background:linear-gradient(180deg,#818cf8,#6366f1);color:#fff;border-end-end-radius:5px;align-self:flex-end;
+  box-shadow:0 3px 0 0 #3730a3, 0 6px 14px -4px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.msg .msg-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.msg .msg-actions a,.msg .msg-actions button{
+  font-size:.75rem;font-weight:800;padding:8px 14px;border-radius:9px;border:0;cursor:pointer;
+  display:inline-flex;align-items:center;gap:6px;transition:.2s;text-decoration:none;
+}
+.msg .msg-actions .a-wa{
+  background:linear-gradient(180deg,#4ade80,#25D366);color:#fff;
+  box-shadow:0 3px 0 0 #128C7E, inset 0 1px 0 rgba(255,255,255,.3);
+}
+.msg .msg-actions .a-wa:hover{transform:translateY(-1px);box-shadow:0 4px 0 0 #128C7E, 0 6px 14px -4px rgba(37,211,102,.5)}
+.msg .msg-actions .a-mail{
+  background:linear-gradient(180deg,#818cf8,#6366f1);color:#fff;
+  box-shadow:0 3px 0 0 #3730a3, inset 0 1px 0 rgba(255,255,255,.3);
+}
+.msg .msg-actions .a-mail:hover{transform:translateY(-1px);box-shadow:0 4px 0 0 #3730a3, 0 6px 14px -4px rgba(99,102,241,.5)}
+
+.chat-chips{display:flex;gap:7px;flex-wrap:wrap;padding:0 18px 14px;background:#f8fafc}
+.chip{
+  font-size:.74rem;font-weight:800;padding:8px 14px;border-radius:100px;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);color:#475569;cursor:pointer;transition:.2s;
+  box-shadow:0 2px 0 0 #e2e8f0;
+}
+.chip:hover{
+  border-color:var(--primary);color:var(--primary);
+  background:linear-gradient(180deg,#eff6ff,#e0e7ff);
+  transform:translateY(-1px);
+  box-shadow:0 3px 0 0 var(--primary-dark), 0 6px 12px -4px rgba(99,102,241,.3);
+}
+
+.chat-foot{padding:14px;border-top:1px solid var(--border);display:flex;gap:10px;background:#fff;flex-shrink:0}
+.chat-foot input{
+  flex:1;padding:12px 16px;border:1.6px solid var(--border);border-radius:12px;outline:none;
+  font-size:.88rem;transition:.2s;min-width:0;
+  background:linear-gradient(180deg,#fbfcfe,#f6f8fd);
+  box-shadow:inset 0 2px 4px rgba(15,23,42,.04);
+}
+.chat-foot input:focus{
+  border-color:var(--primary);background:#fff;
+  box-shadow:inset 0 2px 4px rgba(15,23,42,.04), 0 0 0 3px rgba(99,102,241,.14);
+}
+.chat-foot button{
+  width:46px;height:46px;border-radius:12px;border:0;
+  background:linear-gradient(180deg,#818cf8,#6366f1);color:#fff;
+  cursor:pointer;display:grid;place-items:center;transition:.2s;flex-shrink:0;
+  box-shadow:0 3px 0 0 #3730a3, 0 6px 14px -4px rgba(99,102,241,.5), inset 0 1px 0 rgba(255,255,255,.3);
+}
+.chat-foot button:hover{transform:translateY(-1px);box-shadow:0 4px 0 0 #3730a3, 0 8px 16px -4px rgba(99,102,241,.6), inset 0 1px 0 rgba(255,255,255,.3)}
+.chat-foot button:active{transform:translateY(2px)}
+
+.typing{
+  display:flex;gap:4px;padding:13px 16px;
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border:1px solid var(--border);border-radius:16px;border-end-start-radius:5px;
+  align-self:flex-start;width:fit-content;
+  box-shadow:0 1px 3px rgba(15,23,42,.05);
+}
+.typing i{width:7px;height:7px;border-radius:50%;background:#94a3b8;animation:blink 1.3s infinite}
+.typing i:nth-child(2){animation-delay:.18s}
+.typing i:nth-child(3){animation-delay:.36s}
+@keyframes blink{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+
+/* ============================================================
+   19) Modals
+   ============================================================ */
+.modal{
+  position:fixed;inset:0;z-index:1100;display:grid;place-items:center;padding:20px;
+  background:rgba(10,14,26,.7);backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:.3s;overflow-y:auto;
+}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-box{
+  background:linear-gradient(180deg,#fff,#fbfcff);
+  border-radius:24px;width:100%;max-width:620px;max-height:92vh;overflow-y:auto;
+  box-shadow:0 40px 90px -20px rgba(0,0,0,.5), 0 0 0 1px rgba(99,102,241,.15);
+  transform:translateY(26px) scale(.97);transition:.42s cubic-bezier(.2,.9,.25,1);
+  margin:auto;
+}
+.modal.open .modal-box{transform:none}
+.modal-head{
+  padding:26px 30px;border-bottom:1px solid var(--border);display:flex;align-items:center;
+  justify-content:space-between;gap:16px;position:sticky;top:0;background:#fff;z-index:2;
+  border-radius:24px 24px 0 0;
+}
+.modal-head h3{font-size:1.18rem;font-weight:900}
+.modal-head p{font-size:.83rem;color:var(--gray);margin-top:3px}
+.modal-close{
+  width:40px;height:40px;border-radius:12px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,#fff,#f8fafc);
+  cursor:pointer;display:grid;place-items:center;transition:.2s;color:var(--gray);flex-shrink:0;
+  box-shadow:0 2px 0 0 #cbd5e1;
+}
+.modal-close:hover{
+  background:linear-gradient(180deg,#fee2e2,#fecaca);
+  color:var(--rose);border-color:#fecaca;
+  box-shadow:0 2px 0 0 #9f1239;
+}
+.modal-body{padding:28px 30px 32px}
+
+/* ============================================================
+   20) Reveal
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+.reveal.d5{transition-delay:.4s}
+.reveal.d6{transition-delay:.48s}
+.reveal.d7{transition-delay:.56s}
+
+/* ============================================================
+   21) Responsive
+   ============================================================ */
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:46px}
+  .hero-desc{max-width:100%}
+  .mockup{transform:none!important}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr;gap:38px}
+  .split.reverse .split-media{order:0}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .dash-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:70px 0}
+}
+@media (max-width:680px){
+  :root{--nav-h:64px}
+  .logo-text span{display:none}
+  .logo-mark{width:40px;height:40px;font-size:.95rem}
+  .lang-switch button{padding:7px 10px;font-size:.72rem}
+  .section{padding:58px 0}
+  .section-head{margin-bottom:38px}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .check-list.two-col{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .form-card{padding:24px 20px}
+  .demo-band{padding:42px 22px}
+  .price-card{padding:32px 22px}
+  .dash{padding:16px}
+  .dash-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .dash-card{padding:13px}
+  .dash-card .val{font-size:1.15rem}
+  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .hero{padding-top:calc(var(--nav-h) + 44px);padding-bottom:64px}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns .btn{width:100%}
+  .cta-btns{flex-direction:column}
+  .cta-btns .btn{width:100%}
+  .mock-side{display:none}
+  .mock-stats{grid-template-columns:1fr 1fr}
+  .chat-win{inset-inline:12px;inset-block-end:160px;width:auto;height:calc(100vh - 190px);max-height:none}
+  #waFloat{width:54px;height:54px;inset-block-end:20px;inset-inline-start:16px}
+  #topFloat{width:50px;height:50px;inset-block-end:20px;inset-inline-end:16px}
+  #chatFloat{width:58px;height:58px;inset-block-end:86px;inset-inline-end:16px}
+  .modal-head,.modal-body{padding-inline:20px}
+  .trust-grid{gap:10px 22px}
+  .trust-item{font-size:.82rem}
+  .chart{height:100px;gap:5px}
+}
+@media (max-width:420px){
+  .container{padding-inline:15px}
+  .grid{gap:16px}
+  .card{padding:22px 18px}
+  .mock-row{grid-template-columns:1.4fr .9fr;font-size:.58rem}
+  .mock-row > *:nth-child(3){display:none}
+  .mock-row.head > *:nth-child(3){display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     شريط التنقل
+     ============================================================ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" aria-label="SAL AUTO ÉCOLE PRO">
+      <div class="logo-mark">SAL</div>
+      <div class="logo-text">
+        <b>SAL AUTO ÉCOLE PRO</b>
+        <span data-i18n="logo_sub">تسيير مدارس تعليم السياقة</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home" data-i18n="nav_home">الرئيسية</a>
+      <a href="#features" data-i18n="nav_features">المميزات</a>
+      <a href="#documents" data-i18n="nav_docs">الوثائق</a>
+      <a href="#pricing" data-i18n="nav_pricing">الأسعار</a>
+      <a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a>
+      <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="ar" class="active">🇩🇿 العربية</button>
+        <button type="button" data-lang="fr">Français</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#home" data-i18n="nav_home">الرئيسية</a>
+  <a href="#features" data-i18n="nav_features">المميزات</a>
+  <a href="#candidates" data-i18n="nav_candidates">المترشحون</a>
+  <a href="#documents" data-i18n="nav_docs">الوثائق</a>
+  <a href="#pricing" data-i18n="nav_pricing">الأسعار</a>
+  <a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a>
+  <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+  <button class="btn btn-primary" data-open-modal="demoModal" data-i18n="btn_demo">طلب نسخة تجريبية</button>
+</nav>
+
+<!-- ============================================================
+     Hero
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span data-i18n="hero_badge">برنامج Windows احترافي · إصدار 2026</span>
+      </div>
+
+      <h1>SAL <span class="grad">AUTO ÉCOLE</span> PRO</h1>
+
+      <p class="hero-tagline" data-i18n="hero_tagline">الحل الاحترافي لتسيير مدرسة تعليم السياقة</p>
+
+      <p class="hero-desc" data-i18n="hero_desc">
+        نظّم مترشحيك، دروس السياقة، الامتحانات، الدفوعات، الوثائق والتقارير من خلال واجهة واحدة سهلة وسريعة واحترافية. من تسجيل المترشح إلى الامتحان والدفع والتقارير... كل شيء في مكان واحد.
+      </p>
+
+      <div class="hero-btns">
+        <button class="btn btn-accent btn-lg" data-open-modal="demoModal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn_demo">طلب نسخة تجريبية</span>
+        </button>
+        <button class="btn btn-primary btn-lg" data-download-demo>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn_download">تحميل النسخة التجريبية</span>
+        </button>
+        <a href="#contact" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span data-i18n="btn_contact">تواصل معنا</span>
+        </a>
+      </div>
+
+      <div class="hero-mini">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="mini_1">بدون تعقيد</span>
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="mini_2">عربي / Français</span>
+        </span>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span data-i18n="mini_3">يعمل محليًا على Windows</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="split-media">
+      <div class="mockup float-slow">
+        <div class="mock-bar">
+          <div class="mock-dots"><i></i><i></i><i></i></div>
+          <div class="mock-title">SAL AUTO ÉCOLE PRO — <span data-i18n="mock_dash">لوحة التحكم</span></div>
+        </div>
+        <div class="mock-body">
+          <aside class="mock-side">
+            <div class="brand"><i>SAL</i> AUTO ÉCOLE</div>
+            <div class="mock-link on"><i></i><span data-i18n="mock_nav_dash">لوحة التحكم</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_cand">المترشحون</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_less">الدروس</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_exam">الامتحانات</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_pay">الدفوعات</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_doc">الوثائق</span></div>
+            <div class="mock-link"><i></i><span data-i18n="mock_nav_rep">التقارير</span></div>
+          </aside>
+
+          <main class="mock-main">
+            <div class="mock-head">
+              <h4 data-i18n="mock_welcome">مرحبًا بك في لوحة التحكم</h4>
+              <span class="pill" data-i18n="mock_today">اليوم</span>
+            </div>
+
+            <div class="mock-stats">
+              <div class="mock-stat">
+                <b>248</b>
+                <span data-i18n="mock_s1">مترشح مسجّل</span>
+                <div class="bar"><i style="width:78%;background:linear-gradient(90deg,#6366f1,#8b5cf6)"></i></div>
+              </div>
+              <div class="mock-stat">
+                <b>32</b>
+                <span data-i18n="mock_s2">درس قادم</span>
+                <div class="bar"><i style="width:52%;background:linear-gradient(90deg,#10b981,#14b8a6)"></i></div>
+              </div>
+              <div class="mock-stat">
+                <b>14</b>
+                <span data-i18n="mock_s3">امتحان قادم</span>
+                <div class="bar"><i style="width:38%;background:linear-gradient(90deg,#f59e0b,#f43f5e)"></i></div>
+              </div>
+            </div>
+
+            <div class="mock-table">
+              <div class="mock-row head">
+                <span data-i18n="mock_th1">المترشح</span>
+                <span data-i18n="mock_th2">الحالة</span>
+                <span data-i18n="mock_th3">الرصيد</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">أ</span> أحمد بن علي</span>
+                <span><span class="mock-tag tag-green" data-i18n="mock_st_ok">مكتمل</span></span>
+                <span>0 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">س</span> سارة مرابط</span>
+                <span><span class="mock-tag tag-blue" data-i18n="mock_st_run">قيد التكوين</span></span>
+                <span>4 500 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ي</span> يوسف حمادي</span>
+                <span><span class="mock-tag tag-amber" data-i18n="mock_st_wait">في الانتظار</span></span>
+                <span>9 000 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ن</span> نادية شريف</span>
+                <span><span class="mock-tag tag-blue" data-i18n="mock_st_run">قيد التكوين</span></span>
+                <span>2 000 DA</span>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Trust Bar
+     ============================================================ -->
+<div class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_1">سهل الاستخدام</span></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_2">عربي / Français</span></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_3">إدارة المترشحين</span></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_4">الوثائق والتقارير</span></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_5">إدارة الدفوعات</span></div>
+    <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="trust_6">نسخ احتياطي للبيانات</span></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Features
+     ============================================================ -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="why_eyebrow">المميزات</span>
+      <h2 class="section-title" data-i18n="why_title">لماذا تختار SAL AUTO ÉCOLE PRO؟</h2>
+      <p class="section-sub" data-i18n="why_sub">كل ما تحتاجه لإدارة مدرسة تعليم السياقة في برنامج واحد، بواجهة بسيطة وسريعة تعمل على جهازك.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card reveal d1">
+        <div class="icon-box ib-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3 data-i18n="why_1_t">تنظيم المترشحين</h3>
+        <p data-i18n="why_1_d">ملفات كاملة لكل مترشح: المعلومات الشخصية، الصورة، الهاتف، نوع التكوين وحالة الملف.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-box ib-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3 data-i18n="why_2_t">متابعة الدروس والمواعيد</h3>
+        <p data-i18n="why_2_d">جدولة الدروس، متابعة الحضور، ومعرفة الدروس المنجزة والمتبقية لكل مترشح.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="icon-box ib-amber"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3 data-i18n="why_3_t">إدارة الامتحانات</h3>
+        <p data-i18n="why_3_d">تسجيل المواعيد، الاستدعاءات، متابعة النتائج وتنظيم قوائم المترشحين.</p>
+      </div>
+      <div class="card reveal d4">
+        <div class="icon-box ib-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 data-i18n="why_4_t">متابعة الدفوعات والأرصدة</h3>
+        <p data-i18n="why_4_d">تسجيل الدفعات، حساب المتبقي، متابعة الديون وطباعة الوصولات.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="icon-box ib-cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3 data-i18n="why_5_t">إنشاء الوثائق والتقارير</h3>
+        <p data-i18n="why_5_d">نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="icon-box ib-indigo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3 data-i18n="why_6_t">إحصائيات ولوحة تحكم</h3>
+        <p data-i18n="why_6_d">نظرة شاملة وسريعة على نشاط المدرسة: الأعداد، المواعيد والمداخيل.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="icon-box ib-dark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.5"/><polyline points="21 3 21 9 15 9"/></svg></div>
+        <h3 data-i18n="why_7_t">النسخ الاحتياطي</h3>
+        <p data-i18n="why_7_d">إمكانية إنشاء نسخة احتياطية من بيانات المدرسة والحفاظ عليها.</p>
+      </div>
+      <div class="card reveal d4">
+        <div class="icon-box ib-rose"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 data-i18n="why_8_t">حماية البيانات</h3>
+        <p data-i18n="why_8_d">بيانات المدرسة محفوظة محليًا على جهازك، مع إمكانية التحكم في الصلاحيات.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Candidates
+     ============================================================ -->
+<section class="section" id="candidates">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="cand_eyebrow">المترشحون</span>
+      <h2 data-i18n="cand_title">إدارة كاملة لمترشحي مدرسة تعليم السياقة</h2>
+      <p class="lead" data-i18n="cand_sub">سجّل كل مترشح في دقائق، وتابع ملفه من التسجيل إلى غاية الامتحان.</p>
+
+      <ul class="check-list two-col">
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_1">إضافة مترشح جديد</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_2">معلومات شخصية كاملة</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_3">صورة المترشح</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_4">رقم الهاتف</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_5">تاريخ التسجيل</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_6">نوع التكوين</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_7">متابعة حالة الملف</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_8">متابعة الدفوعات</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_9">معرفة المبلغ المتبقي</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_10">متابعة الدروس</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_11">متابعة الامتحانات</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_12">البحث والتصفية</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="cand_li_13">تعديل وحذف حسب الصلاحيات</span></li>
+      </ul>
+    </div>
+
+    <div class="split-media reveal d2">
+      <div class="mockup" style="transform:none">
+        <div class="mock-bar">
+          <div class="mock-dots"><i></i><i></i><i></i></div>
+          <div class="mock-title" data-i18n="mock_cand_title">المترشحون — قائمة كاملة</div>
+        </div>
+        <div class="mock-body" style="min-height:340px">
+          <main class="mock-main" style="padding:16px">
+            <div class="mock-head">
+              <h4 data-i18n="mock_cand_head">قائمة المترشحين</h4>
+              <span class="pill" data-i18n="mock_add">+ إضافة مترشح</span>
+            </div>
+            <div class="mock-table">
+              <div class="mock-row head">
+                <span data-i18n="mock_th1">المترشح</span>
+                <span data-i18n="mock_th_type">التكوين</span>
+                <span data-i18n="mock_th3">الرصيد</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">أ</span> أحمد بن علي</span>
+                <span><span class="mock-tag tag-blue">B</span></span>
+                <span>0 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">س</span> سارة مرابط</span>
+                <span><span class="mock-tag tag-green">A</span></span>
+                <span>4 500 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ي</span> يوسف حمادي</span>
+                <span><span class="mock-tag tag-blue">C</span></span>
+                <span>9 000 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ن</span> نادية شريف</span>
+                <span><span class="mock-tag tag-amber">B</span></span>
+                <span>2 000 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">م</span> محمد زيتوني</span>
+                <span><span class="mock-tag tag-green">A</span></span>
+                <span>0 DA</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ر</span> رانيا بلقاسم</span>
+                <span><span class="mock-tag tag-blue">B</span></span>
+                <span>6 000 DA</span>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Lessons
+     ============================================================ -->
+<section class="section section-alt" id="lessons">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow green" data-i18n="les_eyebrow">الدروس والمواعيد</span>
+      <h2 class="section-title" data-i18n="les_title">إدارة الدروس والمواعيد</h2>
+      <p class="section-sub" data-i18n="les_sub">نظّم جدول الدروس اليومي والأسبوعي، وتابع حضور المترشحين بسهولة.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card reveal d1"><div class="icon-box ib-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3 data-i18n="les_li_1">جدولة الدروس</h3><p data-i18n="les_li_1d">إنشاء وتنظيم حصص السياقة بسهولة.</p></div>
+      <div class="card reveal d2"><div class="icon-box ib-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 data-i18n="les_li_2">تاريخ ووقت الدرس</h3><p data-i18n="les_li_2d">تحديد التوقيت بدقة لكل حصة.</p></div>
+      <div class="card reveal d3"><div class="icon-box ib-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3 data-i18n="les_li_3">المترشح</h3><p data-i18n="les_li_3d">ربط كل درس بالمترشح المعني.</p></div>
+      <div class="card reveal d4"><div class="icon-box ib-amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg></div><h3 data-i18n="les_li_4">السيارة / المدرّب</h3><p data-i18n="les_li_4d">عند الحاجة، اربط الدرس بالسيارة أو المدرّب.</p></div>
+      <div class="card reveal d1"><div class="icon-box ib-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3 data-i18n="les_li_5">متابعة الحضور</h3><p data-i18n="les_li_5d">تسجيل حضور وغياب المترشحين.</p></div>
+      <div class="card reveal d2"><div class="icon-box ib-indigo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 data-i18n="les_li_6">المنجزة والمتبقية</h3><p data-i18n="les_li_6d">معرفة عدد الدروس المنجزة والمتبقية لكل مترشح.</p></div>
+      <div class="card reveal d3"><div class="icon-box ib-dark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H3v10h6zM21 3h-6v18h6zM15 7H9v14h6z"/></svg></div><h3 data-i18n="les_li_7">تنظيم المواعيد</h3><p data-i18n="les_li_7d">رؤية واضحة للمواعيد القادمة وتفادي التعارض.</p></div>
+      <div class="card reveal d4"><div class="icon-box ib-rose"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3 data-i18n="les_li_8">تنبيهات</h3><p data-i18n="les_li_8d">متابعة المواعيد المهمة وتذكير المترشحين.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Exams
+     ============================================================ -->
+<section class="section" id="exams">
+  <div class="container split reverse">
+    <div class="reveal">
+      <span class="eyebrow amber" data-i18n="ex_eyebrow">الامتحانات</span>
+      <h2 data-i18n="ex_title">إدارة الامتحانات</h2>
+      <p class="lead" data-i18n="ex_sub">تابع مواعيد الامتحانات ونتائج المترشحين وقوائم الاستدعاء في مكان واحد.</p>
+
+      <ul class="check-list">
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_1">تسجيل مواعيد الامتحانات</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_2">استدعاءات المترشحين</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_3">متابعة النتائج</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_4">تاريخ الامتحان</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_5">نوع الامتحان</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_6">حالة المترشح</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_7">تنظيم قوائم المترشحين</span></li>
+        <li><span class="ck"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="ex_li_8">طباعة الوثائق المتعلقة بالامتحانات</span></li>
+      </ul>
+    </div>
+
+    <div class="split-media reveal d2">
+      <div class="mockup" style="transform:none">
+        <div class="mock-bar">
+          <div class="mock-dots"><i></i><i></i><i></i></div>
+          <div class="mock-title" data-i18n="mock_exam_title">الامتحانات — المواعيد القادمة</div>
+        </div>
+        <div class="mock-body" style="min-height:300px">
+          <main class="mock-main" style="padding:16px">
+            <div class="mock-head">
+              <h4 data-i18n="mock_exam_head">جدول الامتحانات</h4>
+              <span class="pill" data-i18n="mock_soon">قريبًا</span>
+            </div>
+            <div class="mock-table">
+              <div class="mock-row head">
+                <span data-i18n="mock_th_exam">الامتحان</span>
+                <span data-i18n="mock_th_date">التاريخ</span>
+                <span data-i18n="mock_th_n">المترشحون</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ن</span> <span data-i18n="mock_ex1">نظري — رمز B</span></span>
+                <span>12/03</span>
+                <span>18</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ت</span> <span data-i18n="mock_ex2">تطبيقي — رمز B</span></span>
+                <span>15/03</span>
+                <span>12</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ن</span> <span data-i18n="mock_ex3">نظري — رمز A</span></span>
+                <span>19/03</span>
+                <span>9</span>
+              </div>
+              <div class="mock-row">
+                <span class="nm"><span class="av">ت</span> <span data-i18n="mock_ex4">تطبيقي — رمز C</span></span>
+                <span>24/03</span>
+                <span>7</span>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Documents
+     ============================================================ -->
+<section class="section section-alt" id="documents">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow purple" data-i18n="docs_eyebrow">الوثائق</span>
+      <h2 class="section-title" data-i18n="docs_title">أنشئ وثائق مدرسة تعليم السياقة بسهولة</h2>
+      <p class="section-sub" data-i18n="docs_sub">نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="doc-card reveal d1"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><b data-i18n="doc_1">قائمة المترشحين</b><small data-i18n="doc_1s">قوائم منظّمة وجاهزة للطباعة</small></div></div>
+      <div class="doc-card reveal d2"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div><b data-i18n="doc_2">استدعاء الامتحان</b><small data-i18n="doc_2s">استدعاءات واضحة لكل مترشح</small></div></div>
+      <div class="doc-card reveal d3"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><b data-i18n="doc_3">عقد تعليم السياقة</b><small data-i18n="doc_3s">نموذج عقد قابل للتخصيص</small></div></div>
+      <div class="doc-card reveal d1"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M14 10h4M14 14h4M4 16c1.5-2 6.5-2 8 0"/></svg></div><div><b data-i18n="doc_4">بطاقة متابعة المترشح</b><small data-i18n="doc_4s">ملخص كامل لمسار المترشح</small></div></div>
+      <div class="doc-card reveal d2"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div><div><b data-i18n="doc_5">طلب الوثائق</b><small data-i18n="doc_5s">نماذج طلب جاهزة</small></div></div>
+      <div class="doc-card reveal d3"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><div><b data-i18n="doc_6">كشوف وقوائم المترشحين</b><small data-i18n="doc_6s">كشوفات منظمة حسب الحاجة</small></div></div>
+      <div class="doc-card reveal d1"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M9 13h6M9 17h4"/></svg></div><div><b data-i18n="doc_7">وصل الدفع</b><small data-i18n="doc_7s">وصولات دفع جاهزة للطباعة</small></div></div>
+      <div class="doc-card reveal d2"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div><b data-i18n="doc_8">التقارير</b><small data-i18n="doc_8s">تقارير إدارية ومالية</small></div></div>
+      <div class="doc-card reveal d3"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><div><b data-i18n="doc_9">وثائق إدارية</b><small data-i18n="doc_9s">نماذج إدارية متنوعة</small></div></div>
+      <div class="doc-card reveal d1"><div class="doc-ico"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div><div><b data-i18n="doc_10">وثائق قابلة للطباعة</b><small data-i18n="doc_10s">طباعة مباشرة من البرنامج</small></div></div>
+    </div>
+
+    <div class="reveal d2" style="margin-top:34px;text-align:center">
+      <div style="display:inline-flex;align-items:flex-start;gap:12px;background:linear-gradient(180deg,#fff7ed,#ffedd5);border:1px solid #fed7aa;color:#9a3412;padding:16px 22px;border-radius:14px;max-width:760px;text-align:start;box-shadow:0 2px 0 0 rgba(154,52,18,.1)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span style="font-size:.88rem;font-weight:600;line-height:1.75" data-i18n="docs_note">ملاحظة: هذه نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Finance
+     ============================================================ -->
+<section class="section" id="finance">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow green" data-i18n="fin_eyebrow">المحاسبة</span>
+      <h2 class="section-title" data-i18n="fin_title">تابع مداخيل المدرسة ومدفوعات المترشحين</h2>
+      <p class="section-sub" data-i18n="fin_sub">رقابة مالية واضحة على الدفعات، الأرصدة المتبقية والمصاريف.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card reveal d1"><div class="icon-box ib-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><h3 data-i18n="fin_li_1">تسجيل الدفعات</h3><p data-i18n="fin_li_1d">تسجيل كل دفعة يقوم بها المترشح بسهولة.</p></div>
+      <div class="card reveal d2"><div class="icon-box ib-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3 data-i18n="fin_li_2">حساب المبلغ المدفوع</h3><p data-i18n="fin_li_2d">مجموع المدفوعات لكل مترشح بشكل تلقائي.</p></div>
+      <div class="card reveal d3"><div class="icon-box ib-amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3 data-i18n="fin_li_3">حساب الرصيد المتبقي</h3><p data-i18n="fin_li_3d">معرفة المبلغ المتبقي على كل مترشح.</p></div>
+      <div class="card reveal d1"><div class="icon-box ib-rose"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3 data-i18n="fin_li_4">متابعة الديون</h3><p data-i18n="fin_li_4d">قائمة المترشحين الذين لم يكملوا الدفع.</p></div>
+      <div class="card reveal d2"><div class="icon-box ib-dark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3 data-i18n="fin_li_5">تسجيل المصاريف</h3><p data-i18n="fin_li_5d">تتبع مصاريف المدرسة اليومية والشهرية.</p></div>
+      <div class="card reveal d3"><div class="icon-box ib-indigo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3 data-i18n="fin_li_6">متابعة المداخيل</h3><p data-i18n="fin_li_6d">رؤية واضحة لكل المداخيل المحصّلة.</p></div>
+      <div class="card reveal d1"><div class="icon-box ib-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><h3 data-i18n="fin_li_7">إحصائيات مالية</h3><p data-i18n="fin_li_7d">أرقام وإحصائيات تساعدك على اتخاذ القرار.</p></div>
+      <div class="card reveal d2"><div class="icon-box ib-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div><h3 data-i18n="fin_li_8">طباعة الوصولات</h3><p data-i18n="fin_li_8d">وصولات دفع جاهزة للطباعة فورًا.</p></div>
+      <div class="card reveal d3"><div class="icon-box ib-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div><h3 data-i18n="fin_li_9">تقارير مالية</h3><p data-i18n="fin_li_9d">تقارير حسب الفترة أو حسب المترشح.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Dashboard
+     ============================================================ -->
+<section class="section section-alt" id="dashboard">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="dash_eyebrow">لوحة التحكم</span>
+      <h2 class="section-title" data-i18n="dash_title">كل أرقام مدرستك في شاشة واحدة</h2>
+      <p class="section-sub" data-i18n="dash_sub">لوحة تحكم حديثة تعطيك صورة فورية عن نشاط المدرسة.</p>
+    </div>
+
+    <div class="dash reveal d2">
+      <div class="dash-grid">
+        <div class="dash-card"><div class="lbl" data-i18n="dash_1">عدد المترشحين</div><div class="val">248</div><span class="chg chg-up">▲ 12%</span></div>
+        <div class="dash-card"><div class="lbl" data-i18n="dash_2">الامتحانات القادمة</div><div class="val">14</div><span class="chg chg-up" data-i18n="dash_soon">هذا الشهر</span></div>
+        <div class="dash-card"><div class="lbl" data-i18n="dash_3">الدروس القادمة</div><div class="val">32</div><span class="chg chg-up" data-i18n="dash_week">هذا الأسبوع</span></div>
+        <div class="dash-card"><div class="lbl" data-i18n="dash_4">المبالغ المحصّلة</div><div class="val">1 250 000 <small style="font-size:.6em">DA</small></div><span class="chg chg-up">▲ 8%</span></div>
+        <div class="dash-card"><div class="lbl" data-i18n="dash_5">المبالغ المتبقية</div><div class="val">380 000 <small style="font-size:.6em">DA</small></div><span class="chg chg-dn">▼ 4%</span></div>
+        <div class="dash-card"><div class="lbl" data-i18n="dash_6">المصاريف</div><div class="val">215 000 <small style="font-size:.6em">DA</small></div><span class="chg chg-dn">▲ 6%</span></div>
+      </div>
+
+      <div style="padding:0 4px">
+        <div style="font-size:.82rem;font-weight:800;color:var(--gray);margin-bottom:2px" data-i18n="dash_chart">إحصائيات شهرية — المترشحون</div>
+        <div class="chart">
+          <div class="col"><div class="bar" style="height:42%"></div><span data-i18n="m_1">جان</span></div>
+          <div class="col"><div class="bar" style="height:58%"></div><span data-i18n="m_2">فيف</span></div>
+          <div class="col"><div class="bar" style="height:48%"></div><span data-i18n="m_3">مار</span></div>
+          <div class="col"><div class="bar" style="height:72%"></div><span data-i18n="m_4">أفر</span></div>
+          <div class="col"><div class="bar" style="height:64%"></div><span data-i18n="m_5">ماي</span></div>
+          <div class="col"><div class="bar" style="height:88%"></div><span data-i18n="m_6">جوان</span></div>
+          <div class="col"><div class="bar" style="height:76%"></div><span data-i18n="m_7">جويل</span></div>
+          <div class="col"><div class="bar" style="height:92%"></div><span data-i18n="m_8">أوت</span></div>
+          <div class="col"><div class="bar" style="height:82%"></div><span data-i18n="m_9">سبت</span></div>
+          <div class="col"><div class="bar" style="height:96%"></div><span data-i18n="m_10">أكت</span></div>
+          <div class="col"><div class="bar" style="height:85%"></div><span data-i18n="m_11">نوف</span></div>
+          <div class="col"><div class="bar" style="height:100%"></div><span data-i18n="m_12">ديس</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WhatsApp
+     ============================================================ -->
+<section class="section wa-section" id="whatsapp-section">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="wa_eyebrow">تواصل سريع</span>
+      <h2 class="section-title" style="text-align:start" data-i18n="wa_title">تواصل أسرع مع المترشحين</h2>
+      <p style="color:#a7f3d0;margin-bottom:26px;font-size:1rem" data-i18n="wa_sub">افتح محادثة WhatsApp مباشرة مع المترشح لإرسال التذكيرات والمعلومات المهمة.</p>
+
+      <ul class="wa-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-i18n="wa_li_1">موعد الامتحان</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="wa_li_2">موعد الدرس</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span data-i18n="wa_li_3">تذكير بالدفع</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-i18n="wa_li_4">المبلغ المتبقي</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span data-i18n="wa_li_5">المواعيد</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span data-i18n="wa_li_6">معلومات أخرى</span></li>
+      </ul>
+    </div>
+
+    <div class="reveal d2" style="display:grid;place-items:center">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.22);border-radius:24px;padding:40px 32px;text-align:center;backdrop-filter:blur(12px);max-width:400px;width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)">
+        <div style="width:82px;height:82px;border-radius:50%;background:linear-gradient(180deg,#4ade80,#128C7E);display:grid;place-items:center;margin:0 auto 22px;box-shadow:0 6px 0 0 #0d6b5c, 0 14px 34px -10px rgba(37,211,102,.7), inset 0 1px 0 rgba(255,255,255,.4)">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </div>
+        <h3 style="color:#fff;font-size:1.2rem;margin-bottom:10px" data-i18n="wa_card_title">راسلنا مباشرة</h3>
+        <p style="color:#a7f3d0;font-size:.9rem;margin-bottom:26px" data-i18n="wa_card_sub">نجيبك بسرعة على كل استفساراتك حول البرنامج.</p>
+        <button class="btn btn-accent btn-lg btn-block" data-whatsapp>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span data-i18n="wa_btn">تواصل عبر WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Requirements
+     ============================================================ -->
+<section class="section" id="requirements">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="req_eyebrow">متطلبات التشغيل</span>
+      <h2 class="section-title" data-i18n="req_title">متطلبات تشغيل البرنامج</h2>
+      <p class="section-sub" data-i18n="req_sub">البرنامج يعمل محليًا على جهاز الكمبيوتر بدون الحاجة إلى اتصال دائم بالإنترنت.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="req-card reveal d1"><div class="icon-box ib-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><b data-i18n="req_1">Windows 7 64-bit فما فوق</b><p data-i18n="req_1d">حسب توافق الإصدار.</p></div></div>
+      <div class="req-card reveal d2"><div class="icon-box ib-green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div><div><b data-i18n="req_2">Windows 10</b><p data-i18n="req_2d">يعمل بشكل جيد على الإصدارات الحديثة.</p></div></div>
+      <div class="req-card reveal d3"><div class="icon-box ib-cyan"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/></svg></div><div><b data-i18n="req_3">Windows 11</b><p data-i18n="req_3d">مدعوم بالكامل.</p></div></div>
+      <div class="req-card reveal d1"><div class="icon-box ib-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg></div><div><b data-i18n="req_4">يعمل محليًا على الكمبيوتر</b><p data-i18n="req_4d">تطبيق سطح مكتب مستقل.</p></div></div>
+      <div class="req-card reveal d2"><div class="icon-box ib-amber"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div><b data-i18n="req_5">قاعدة بيانات محلية</b><p data-i18n="req_5d">بيانات المدرسة محفوظة على جهازك.</p></div></div>
+      <div class="req-card reveal d3"><div class="icon-box ib-dark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.5"/><polyline points="21 3 21 9 15 9"/></svg></div><div><b data-i18n="req_6">إمكانية النسخ الاحتياطي</b><p data-i18n="req_6d">احفظ نسخة من بياناتك في أي وقت.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Demo Band
+     ============================================================ -->
+<section class="section" id="demo" style="padding-top:0">
+  <div class="container">
+    <div class="demo-band reveal">
+      <h2 data-i18n="demo_title">جرّب SAL AUTO ÉCOLE PRO قبل الشراء</h2>
+      <p data-i18n="demo_sub">اكتشف واجهة البرنامج ومميزاته بنفسك من خلال النسخة التجريبية.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+        <button class="btn btn-lg" style="background:linear-gradient(180deg,#ffffff,#f1f5f9);color:var(--primary);box-shadow:0 6px 0 0 rgba(0,0,0,.15), 0 8px 20px -4px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.9)" data-open-modal="demoModal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn_demo">طلب نسخة تجريبية</span>
+        </button>
+        <button class="btn btn-lg btn-outline" data-download-demo>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="btn_download">تحميل النسخة التجريبية</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Pricing
+     ============================================================ -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow green" data-i18n="price_eyebrow">الأسعار</span>
+      <h2 class="section-title" data-i18n="price_title">الأسعار</h2>
+      <p class="section-sub" data-i18n="price_sub">اختر النسخة المناسبة لحجم مدرستك واحتياجاتك.</p>
+    </div>
+
+    <div class="price-card reveal d2">
+      <span class="price-badge" data-i18n="price_badge">مرن حسب احتياجك</span>
+      <h3 style="font-size:1.25rem" data-i18n="price_name">SAL AUTO ÉCOLE PRO</h3>
+      <div class="price-value" id="priceValue" data-i18n="price_value">السعر حسب النسخة والاحتياجات</div>
+      <p class="price-note" data-i18n="price_note">تواصل معنا للحصول على عرض سعر مناسب لمدرستك.</p>
+
+      <ul class="price-feats">
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f1">إدارة كاملة للمترشحين</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f2">الدروس والمواعيد</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f3">الامتحانات والاستدعاءات</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f4">الدفوعات والوصولات</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f5">الوثائق والتقارير القابلة للطباعة</span></li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price_f6">دعم فني</span></li>
+      </ul>
+
+      <button class="btn btn-primary btn-lg btn-block" data-open-chat data-i18n="price_ask">اسأل عن السعر</button>
+      <button class="btn btn-outline btn-block" style="margin-top:12px" data-open-modal="contactModal" data-i18n="price_contact">تواصل معنا</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Contact
+     ============================================================ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="contact_eyebrow">تواصل معنا</span>
+      <h2 class="section-title" data-i18n="contact_title">نحن هنا للإجابة على كل أسئلتك</h2>
+      <p class="section-sub" data-i18n="contact_sub">تواصل معنا وسنعود إليك في أقرب وقت.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:34px" class="contact-layout">
+      <div class="contact-cards reveal d1">
+        <a class="cc" id="ccPhone" href="#">
+          <div class="icon-box ib-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b data-i18n="cc_phone">الهاتف</b><span id="phoneDisplay">0793252968</span></div>
+        </a>
+        <a class="cc" id="ccMail" href="#">
+          <div class="icon-box ib-rose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><b data-i18n="cc_email">البريد الإلكتروني</b><span id="emailDisplay">yacininfo8@gmail.com</span></div>
+        </a>
+        <a class="cc" id="ccWa" href="#" target="_blank" rel="noopener">
+          <div class="icon-box ib-green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <div><b>WhatsApp</b><span data-i18n="cc_wa">محادثة فورية</span></div>
+        </a>
+        <div style="background:linear-gradient(180deg,#eff6ff,#f5f3ff);border:1px solid #dbeafe;border-radius:16px;padding:24px;box-shadow:0 1px 3px rgba(15,23,42,.04)">
+          <h4 style="font-size:.95rem;margin-bottom:10px" data-i18n="cc_hours_t">أوقات الرد</h4>
+          <p style="font-size:.86rem;color:var(--gray);line-height:1.8" data-i18n="cc_hours_d">نحاول الرد على استفساراتكم في أقرب وقت ممكن خلال أيام العمل.</p>
+        </div>
+      </div>
+
+      <div class="form-card reveal d2">
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="c_name" data-i18n="f_name">الاسم</label>
+              <input type="text" id="c_name" name="name" required data-i18n-ph="f_name_ph" placeholder="اسمك الكامل">
+            </div>
+            <div class="field">
+              <label for="c_school" data-i18n="f_school">اسم مدرسة تعليم السياقة</label>
+              <input type="text" id="c_school" name="school" data-i18n-ph="f_school_ph" placeholder="اسم المدرسة">
+            </div>
+            <div class="field">
+              <label for="c_phone" data-i18n="f_phone">رقم الهاتف</label>
+              <input type="tel" id="c_phone" name="phone" required data-i18n-ph="f_phone_ph" placeholder="0X XX XX XX XX">
+            </div>
+            <div class="field">
+              <label for="c_email" data-i18n="f_email">البريد الإلكتروني</label>
+              <input type="email" id="c_email" name="email" data-i18n-ph="f_email_ph" placeholder="example@mail.com">
+            </div>
+            <div class="field">
+              <label for="c_wilaya" data-i18n="f_wilaya">الولاية</label>
+              <input type="text" id="c_wilaya" name="wilaya" data-i18n-ph="f_wilaya_ph" placeholder="الولاية">
+            </div>
+            <div class="field">
+              <label for="c_subject" data-i18n="f_subject">موضوع الرسالة</label>
+              <select id="c_subject" name="subject">
+                <option data-i18n="f_sub_1">طلب نسخة تجريبية</option>
+                <option data-i18n="f_sub_2">الاستفسار عن السعر</option>
+                <option data-i18n="f_sub_3">دعم فني</option>
+                <option data-i18n="f_sub_4">استفسار عام</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="c_message" data-i18n="f_message">الرسالة</label>
+              <textarea id="c_message" name="message" required data-i18n-ph="f_message_ph" placeholder="اكتب رسالتك هنا..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:22px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span data-i18n="f_send">إرسال</span>
+          </button>
+
+          <div class="form-msg ok" id="contactMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow purple" data-i18n="faq_eyebrow">الأسئلة الشائعة</span>
+      <h2 class="section-title" data-i18n="faq_title">الأسئلة الشائعة</h2>
+      <p class="section-sub" data-i18n="faq_sub">أجوبة سريعة على أكثر الأسئلة تكرارًا.</p>
+    </div>
+
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta" id="cta">
+  <div class="container">
+    <h2 class="reveal" data-i18n="cta_title">جاهز لتنظيم مدرسة تعليم السياقة بطريقة أكثر احترافية؟</h2>
+    <p class="reveal d1" data-i18n="cta_sub">جرّب SAL AUTO ÉCOLE PRO واكتشف كيف يمكن أن تصبح إدارة المترشحين والدروس والامتحانات والدفوعات والوثائق أكثر تنظيمًا.</p>
+    <div class="cta-btns reveal d2">
+      <button class="btn btn-accent btn-lg" data-open-modal="demoModal" data-i18n="btn_demo">طلب نسخة تجريبية</button>
+      <button class="btn btn-primary btn-lg" data-download-demo data-i18n="btn_download">تحميل النسخة التجريبية</button>
+      <a href="#contact" class="btn btn-ghost btn-lg" data-i18n="btn_contact">تواصل معنا</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Footer
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <div class="logo-mark">SAL</div>
+          <div class="logo-text">
+            <b>SAL AUTO ÉCOLE PRO</b>
+            <span data-i18n="logo_sub">تسيير مدارس تعليم السياقة</span>
+          </div>
+        </div>
+        <p class="footer-desc" data-i18n="footer_desc">برنامج احترافي ومتكامل لتسيير مدارس تعليم السياقة: المترشحون، الدروس، الامتحانات، الدفوعات، الوثائق والتقارير في مكان واحد.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer_links">روابط</h4>
+        <div class="footer-links">
+          <a href="#home" data-i18n="nav_home">الرئيسية</a>
+          <a href="#features" data-i18n="nav_features">المميزات</a>
+          <a href="#documents" data-i18n="nav_docs">الوثائق</a>
+          <a href="#pricing" data-i18n="nav_pricing">الأسعار</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer_more">المزيد</h4>
+        <div class="footer-links">
+          <a href="#faq" data-i18n="nav_faq">الأسئلة الشائعة</a>
+          <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+          <a href="#demo" data-i18n="footer_demo">النسخة التجريبية</a>
+          <a href="#requirements" data-i18n="footer_req">متطلبات التشغيل</a>
+        </div>
+      </div>
+      <div>
+        <h4 data-i18n="footer_contact">تواصل معنا</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+213793252968" class="footer-phone">0793252968</a>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:yacininfo8@gmail.com" class="footer-email">yacininfo8@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SAL AUTO ÉCOLE PRO — <span data-i18n="footer_rights">جميع الحقوق محفوظة</span></span>
+      <span data-i18n="footer_made">صُمّم بعناية لمدارس تعليم السياقة في الجزائر 🇩🇿</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Floating Buttons
+     ============================================================ -->
+<button class="float-btn" id="waFloat" aria-label="WhatsApp" data-whatsapp>
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</button>
+
+<button class="float-btn" id="chatFloat" aria-label="Chat">
+  <span class="badge"></span>
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</button>
+
+<button class="float-btn" id="topFloat" aria-label="Top">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- ============================================================
+     Chat Window
+     ============================================================ -->
+<div class="chat-win" id="chatWin" role="dialog" aria-label="SAL Assistant">
+  <div class="chat-head">
+    <div class="av">🤖</div>
+    <div>
+      <b>SAL Assistant</b>
+      <small data-i18n="chat_online">متصل الآن</small>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-chips" id="chatChips"></div>
+  <form class="chat-foot" id="chatForm">
+    <input type="text" id="chatInput" autocomplete="off" data-i18n-ph="chat_ph" placeholder="اكتب سؤالك هنا...">
+    <button type="submit" aria-label="Send">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
+</div>
+
+<!-- ============================================================
+     Modal: Demo Request
+     ============================================================ -->
+<div class="modal" id="demoModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3 data-i18n="dm_title">طلب نسخة تجريبية</h3>
+        <p data-i18n="dm_sub">املأ المعلومات التالية وسنتواصل معك.</p>
+      </div>
+      <button class="modal-close" data-close-modal aria-label="Close">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="demoForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="d_name" data-i18n="f_name">الاسم</label>
+            <input type="text" id="d_name" required data-i18n-ph="f_name_ph" placeholder="اسمك الكامل">
+          </div>
+          <div class="field">
+            <label for="d_school" data-i18n="f_school">اسم مدرسة تعليم السياقة</label>
+            <input type="text" id="d_school" required data-i18n-ph="f_school_ph" placeholder="اسم المدرسة">
+          </div>
+          <div class="field">
+            <label for="d_phone" data-i18n="f_phone">رقم الهاتف</label>
+            <input type="tel" id="d_phone" required data-i18n-ph="f_phone_ph" placeholder="0X XX XX XX XX">
+          </div>
+          <div class="field">
+            <label for="d_wilaya" data-i18n="f_wilaya">الولاية</label>
+            <input type="text" id="d_wilaya" required data-i18n-ph="f_wilaya_ph" placeholder="الولاية">
+          </div>
+          <div class="field full">
+            <label for="d_email" data-i18n="f_email">البريد الإلكتروني</label>
+            <input type="email" id="d_email" data-i18n-ph="f_email_ph" placeholder="example@mail.com">
+          </div>
+          <div class="field full">
+            <label for="d_message" data-i18n="f_message">رسالة</label>
+            <textarea id="d_message" data-i18n-ph="f_message_ph" placeholder="اكتب رسالتك هنا..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:22px" data-i18n="dm_send">إرسال الطلب</button>
+        <div class="form-msg ok" id="demoMsg"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Modal: Contact
+     ============================================================ -->
+<div class="modal" id="contactModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3 data-i18n="cm_title">تواصل معنا</h3>
+        <p data-i18n="cm_sub">اختر طريقة التواصل المناسبة لك.</p>
+      </div>
+      <button class="modal-close" data-close-modal aria-label="Close">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div style="display:grid;gap:14px">
+        <a class="cc" id="cmWa" href="#" target="_blank" rel="noopener">
+          <div class="icon-box ib-green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <div><b>WhatsApp</b><span data-i18n="cc_wa">محادثة فورية</span></div>
+        </a>
+        <a class="cc" id="cmMail" href="#">
+          <div class="icon-box ib-rose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><b data-i18n="cc_email">البريد الإلكتروني</b><span id="cmEmail">yacininfo8@gmail.com</span></div>
+        </a>
+        <a class="cc" id="cmPhone" href="#">
+          <div class="icon-box ib-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b data-i18n="cc_phone">الهاتف</b><span id="cmPhoneTxt">0793252968</span></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==============================================================
+   إعدادات الموقع — عدّل من هنا
+   ============================================================== */
+const CONFIG = {
+  appName: "SAL AUTO ÉCOLE PRO",
+  phoneDisplay: "0793252968",
+  phoneCall: "+213793252968",
+  email: "yacininfo8@gmail.com",
+  whatsapp: "213793252968",
+  whatsappMessage: {
+    ar: "السلام عليكم، أريد معلومات حول برنامج SAL AUTO ÉCOLE PRO وطلب نسخة تجريبية.",
+    fr: "Bonjour, je souhaite des informations sur le logiciel SAL AUTO ÉCOLE PRO et demander une version d'essai."
+  },
+  demoDownloadUrl: "https://drive.google.com/uc?export=download&id=1lPe1J_SoEtGtjMv7APXFxeIWAXwA3p8H",
+  demoViewUrl: "https://drive.google.com/file/d/1lPe1J_SoEtGtjMv7APXFxeIWAXwA3p8H/view?usp=sharing",
+  price: "",
+  priceCurrency: "DA",
+  links: { facebook: "", instagram: "", youtube: "" }
+};
+
+/* ==============================================================
+   1) نظام الترجمة
+   ============================================================== */
+const I18N = {
+  ar: {
+    logo_sub: "تسيير مدارس تعليم السياقة",
+    nav_home: "الرئيسية", nav_features: "المميزات", nav_candidates: "المترشحون",
+    nav_docs: "الوثائق", nav_pricing: "الأسعار", nav_faq: "الأسئلة الشائعة", nav_contact: "تواصل معنا",
+    hero_badge: "برنامج Windows احترافي · إصدار 2026",
+    hero_tagline: "الحل الاحترافي لتسيير مدرسة تعليم السياقة",
+    hero_desc: "نظّم مترشحيك، دروس السياقة، الامتحانات، الدفوعات، الوثائق والتقارير من خلال واجهة واحدة سهلة وسريعة واحترافية. من تسجيل المترشح إلى الامتحان والدفع والتقارير... كل شيء في مكان واحد.",
+    btn_demo: "طلب نسخة تجريبية", btn_download: "تحميل النسخة التجريبية", btn_contact: "تواصل معنا",
+    mini_1: "بدون تعقيد", mini_2: "عربي / Français", mini_3: "يعمل محليًا على Windows",
+    mock_dash: "لوحة التحكم", mock_nav_dash: "لوحة التحكم", mock_nav_cand: "المترشحون",
+    mock_nav_less: "الدروس", mock_nav_exam: "الامتحانات", mock_nav_pay: "الدفوعات",
+    mock_nav_doc: "الوثائق", mock_nav_rep: "التقارير",
+    mock_welcome: "مرحبًا بك في لوحة التحكم", mock_today: "اليوم",
+    mock_s1: "مترشح مسجّل", mock_s2: "درس قادم", mock_s3: "امتحان قادم",
+    mock_th1: "المترشح", mock_th2: "الحالة", mock_th3: "الرصيد", mock_th_type: "التكوين",
+    mock_st_ok: "مكتمل", mock_st_run: "قيد التكوين", mock_st_wait: "في الانتظار",
+    mock_cand_title: "المترشحون — قائمة كاملة", mock_cand_head: "قائمة المترشحين", mock_add: "+ إضافة مترشح",
+    mock_exam_title: "الامتحانات — المواعيد القادمة", mock_exam_head: "جدول الامتحانات", mock_soon: "قريبًا",
+    mock_th_exam: "الامتحان", mock_th_date: "التاريخ", mock_th_n: "المترشحون",
+    mock_ex1: "نظري — رمز B", mock_ex2: "تطبيقي — رمز B", mock_ex3: "نظري — رمز A", mock_ex4: "تطبيقي — رمز C",
+    trust_1: "سهل الاستخدام", trust_2: "عربي / Français", trust_3: "إدارة المترشحين",
+    trust_4: "الوثائق والتقارير", trust_5: "إدارة الدفوعات", trust_6: "نسخ احتياطي للبيانات",
+    why_eyebrow: "المميزات",
+    why_title: "لماذا تختار SAL AUTO ÉCOLE PRO؟",
+    why_sub: "كل ما تحتاجه لإدارة مدرسة تعليم السياقة في برنامج واحد، بواجهة بسيطة وسريعة تعمل على جهازك.",
+    why_1_t: "تنظيم المترشحين", why_1_d: "ملفات كاملة لكل مترشح: المعلومات الشخصية، الصورة، الهاتف، نوع التكوين وحالة الملف.",
+    why_2_t: "متابعة الدروس والمواعيد", why_2_d: "جدولة الدروس، متابعة الحضور، ومعرفة الدروس المنجزة والمتبقية لكل مترشح.",
+    why_3_t: "إدارة الامتحانات", why_3_d: "تسجيل المواعيد، الاستدعاءات، متابعة النتائج وتنظيم قوائم المترشحين.",
+    why_4_t: "متابعة الدفوعات والأرصدة", why_4_d: "تسجيل الدفعات، حساب المتبقي، متابعة الديون وطباعة الوصولات.",
+    why_5_t: "إنشاء الوثائق والتقارير", why_5_d: "نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.",
+    why_6_t: "إحصائيات ولوحة تحكم", why_6_d: "نظرة شاملة وسريعة على نشاط المدرسة: الأعداد، المواعيد والمداخيل.",
+    why_7_t: "النسخ الاحتياطي", why_7_d: "إمكانية إنشاء نسخة احتياطية من بيانات المدرسة والحفاظ عليها.",
+    why_8_t: "حماية البيانات", why_8_d: "بيانات المدرسة محفوظة محليًا على جهازك، مع إمكانية التحكم في الصلاحيات.",
+    cand_eyebrow: "المترشحون",
+    cand_title: "إدارة كاملة لمترشحي مدرسة تعليم السياقة",
+    cand_sub: "سجّل كل مترشح في دقائق، وتابع ملفه من التسجيل إلى غاية الامتحان.",
+    cand_li_1: "إضافة مترشح جديد", cand_li_2: "معلومات شخصية كاملة", cand_li_3: "صورة المترشح",
+    cand_li_4: "رقم الهاتف", cand_li_5: "تاريخ التسجيل", cand_li_6: "نوع التكوين",
+    cand_li_7: "متابعة حالة الملف", cand_li_8: "متابعة الدفوعات", cand_li_9: "معرفة المبلغ المتبقي",
+    cand_li_10: "متابعة الدروس", cand_li_11: "متابعة الامتحانات", cand_li_12: "البحث والتصفية",
+    cand_li_13: "تعديل وحذف حسب الصلاحيات",
+    les_eyebrow: "الدروس والمواعيد", les_title: "إدارة الدروس والمواعيد",
+    les_sub: "نظّم جدول الدروس اليومي والأسبوعي، وتابع حضور المترشحين بسهولة.",
+    les_li_1: "جدولة الدروس", les_li_1d: "إنشاء وتنظيم حصص السياقة بسهولة.",
+    les_li_2: "تاريخ ووقت الدرس", les_li_2d: "تحديد التوقيت بدقة لكل حصة.",
+    les_li_3: "المترشح", les_li_3d: "ربط كل درس بالمترشح المعني.",
+    les_li_4: "السيارة / المدرّب", les_li_4d: "عند الحاجة، اربط الدرس بالسيارة أو المدرّب.",
+    les_li_5: "متابعة الحضور", les_li_5d: "تسجيل حضور وغياب المترشحين.",
+    les_li_6: "المنجزة والمتبقية", les_li_6d: "معرفة عدد الدروس المنجزة والمتبقية لكل مترشح.",
+    les_li_7: "تنظيم المواعيد", les_li_7d: "رؤية واضحة للمواعيد القادمة وتفادي التعارض.",
+    les_li_8: "تنبيهات", les_li_8d: "متابعة المواعيد المهمة وتذكير المترشحين.",
+    ex_eyebrow: "الامتحانات", ex_title: "إدارة الامتحانات",
+    ex_sub: "تابع مواعيد الامتحانات ونتائج المترشحين وقوائم الاستدعاء في مكان واحد.",
+    ex_li_1: "تسجيل مواعيد الامتحانات", ex_li_2: "استدعاءات المترشحين", ex_li_3: "متابعة النتائج",
+    ex_li_4: "تاريخ الامتحان", ex_li_5: "نوع الامتحان", ex_li_6: "حالة المترشح",
+    ex_li_7: "تنظيم قوائم المترشحين", ex_li_8: "طباعة الوثائق المتعلقة بالامتحانات",
+    docs_eyebrow: "الوثائق", docs_title: "أنشئ وثائق مدرسة تعليم السياقة بسهولة",
+    docs_sub: "نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.",
+    docs_note: "ملاحظة: هذه نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.",
+    doc_1: "قائمة المترشحين", doc_1s: "قوائم منظّمة وجاهزة للطباعة",
+    doc_2: "استدعاء الامتحان", doc_2s: "استدعاءات واضحة لكل مترشح",
+    doc_3: "عقد تعليم السياقة", doc_3s: "نموذج عقد قابل للتخصيص",
+    doc_4: "بطاقة متابعة المترشح", doc_4s: "ملخص كامل لمسار المترشح",
+    doc_5: "طلب الوثائق", doc_5s: "نماذج طلب جاهزة",
+    doc_6: "كشوف وقوائم المترشحين", doc_6s: "كشوفات منظمة حسب الحاجة",
+    doc_7: "وصل الدفع", doc_7s: "وصولات دفع جاهزة للطباعة",
+    doc_8: "التقارير", doc_8s: "تقارير إدارية ومالية",
+    doc_9: "وثائق إدارية", doc_9s: "نماذج إدارية متنوعة",
+    doc_10: "وثائق قابلة للطباعة", doc_10s: "طباعة مباشرة من البرنامج",
+    fin_eyebrow: "المحاسبة", fin_title: "تابع مداخيل المدرسة ومدفوعات المترشحين",
+    fin_sub: "رقابة مالية واضحة على الدفعات، الأرصدة المتبقية والمصاريف.",
+    fin_li_1: "تسجيل الدفعات", fin_li_1d: "تسجيل كل دفعة يقوم بها المترشح بسهولة.",
+    fin_li_2: "حساب المبلغ المدفوع", fin_li_2d: "مجموع المدفوعات لكل مترشح بشكل تلقائي.",
+    fin_li_3: "حساب الرصيد المتبقي", fin_li_3d: "معرفة المبلغ المتبقي على كل مترشح.",
+    fin_li_4: "متابعة الديون", fin_li_4d: "قائمة المترشحين الذين لم يكملوا الدفع.",
+    fin_li_5: "تسجيل المصاريف", fin_li_5d: "تتبع مصاريف المدرسة اليومية والشهرية.",
+    fin_li_6: "متابعة المداخيل", fin_li_6d: "رؤية واضحة لكل المداخيل المحصّلة.",
+    fin_li_7: "إحصائيات مالية", fin_li_7d: "أرقام وإحصائيات تساعدك على اتخاذ القرار.",
+    fin_li_8: "طباعة الوصولات", fin_li_8d: "وصولات دفع جاهزة للطباعة فورًا.",
+    fin_li_9: "تقارير مالية", fin_li_9d: "تقارير حسب الفترة أو حسب المترشح.",
+    dash_eyebrow: "لوحة التحكم", dash_title: "كل أرقام مدرستك في شاشة واحدة",
+    dash_sub: "لوحة تحكم حديثة تعطيك صورة فورية عن نشاط المدرسة.",
+    dash_1: "عدد المترشحين", dash_2: "الامتحانات القادمة", dash_3: "الدروس القادمة",
+    dash_4: "المبالغ المحصّلة", dash_5: "المبالغ المتبقية", dash_6: "المصاريف",
+    dash_soon: "هذا الشهر", dash_week: "هذا الأسبوع",
+    dash_chart: "إحصائيات شهرية — المترشحون",
+    m_1: "جان", m_2: "فيف", m_3: "مار", m_4: "أفر", m_5: "ماي", m_6: "جوان",
+    m_7: "جويل", m_8: "أوت", m_9: "سبت", m_10: "أكت", m_11: "نوف", m_12: "ديس",
+    wa_eyebrow: "تواصل سريع", wa_title: "تواصل أسرع مع المترشحين",
+    wa_sub: "افتح محادثة WhatsApp مباشرة مع المترشح لإرسال التذكيرات والمعلومات المهمة.",
+    wa_li_1: "موعد الامتحان", wa_li_2: "موعد الدرس", wa_li_3: "تذكير بالدفع",
+    wa_li_4: "المبلغ المتبقي", wa_li_5: "المواعيد", wa_li_6: "معلومات أخرى",
+    wa_card_title: "راسلنا مباشرة", wa_card_sub: "نجيبك بسرعة على كل استفساراتك حول البرنامج.",
+    wa_btn: "تواصل عبر WhatsApp",
+    req_eyebrow: "متطلبات التشغيل", req_title: "متطلبات تشغيل البرنامج",
+    req_sub: "البرنامج يعمل محليًا على جهاز الكمبيوتر بدون الحاجة إلى اتصال دائم بالإنترنت.",
+    req_1: "Windows 7 64-bit فما فوق", req_1d: "حسب توافق الإصدار.",
+    req_2: "Windows 10", req_2d: "يعمل بشكل جيد على الإصدارات الحديثة.",
+    req_3: "Windows 11", req_3d: "مدعوم بالكامل.",
+    req_4: "يعمل محليًا على الكمبيوتر", req_4d: "تطبيق سطح مكتب مستقل.",
+    req_5: "قاعدة بيانات محلية", req_5d: "بيانات المدرسة محفوظة على جهازك.",
+    req_6: "إمكانية النسخ الاحتياطي", req_6d: "احفظ نسخة من بياناتك في أي وقت.",
+    demo_title: "جرّب SAL AUTO ÉCOLE PRO قبل الشراء",
+    demo_sub: "اكتشف واجهة البرنامج ومميزاته بنفسك من خلال النسخة التجريبية.",
+    price_eyebrow: "الأسعار", price_title: "الأسعار",
+    price_sub: "اختر النسخة المناسبة لحجم مدرستك واحتياجاتك.",
+    price_badge: "مرن حسب احتياجك", price_name: "SAL AUTO ÉCOLE PRO",
+    price_value: "السعر حسب النسخة والاحتياجات",
+    price_note: "تواصل معنا للحصول على عرض سعر مناسب لمدرستك.",
+    price_f1: "إدارة كاملة للمترشحين", price_f2: "الدروس والمواعيد",
+    price_f3: "الامتحانات والاستدعاءات", price_f4: "الدفوعات والوصولات",
+    price_f5: "الوثائق والتقارير القابلة للطباعة", price_f6: "دعم فني",
+    price_ask: "اسأل عن السعر", price_contact: "تواصل معنا",
+    contact_eyebrow: "تواصل معنا", contact_title: "نحن هنا للإجابة على كل أسئلتك",
+    contact_sub: "تواصل معنا وسنعود إليك في أقرب وقت.",
+    cc_phone: "الهاتف", cc_email: "البريد الإلكتروني", cc_wa: "محادثة فورية",
+    cc_hours_t: "أوقات الرد", cc_hours_d: "نحاول الرد على استفساراتكم في أقرب وقت ممكن خلال أيام العمل.",
+    f_name: "الاسم", f_name_ph: "اسمك الكامل",
+    f_school: "اسم مدرسة تعليم السياقة", f_school_ph: "اسم المدرسة",
+    f_phone: "رقم الهاتف", f_phone_ph: "0X XX XX XX XX",
+    f_email: "البريد الإلكتروني", f_email_ph: "example@mail.com",
+    f_wilaya: "الولاية", f_wilaya_ph: "الولاية",
+    f_subject: "موضوع الرسالة", f_sub_1: "طلب نسخة تجريبية", f_sub_2: "الاستفسار عن السعر",
+    f_sub_3: "دعم فني", f_sub_4: "استفسار عام",
+    f_message: "الرسالة", f_message_ph: "اكتب رسالتك هنا...", f_send: "إرسال",
+    form_success: "تم استلام طلبك بنجاح. سنتواصل معك في أقرب وقت. (ملاحظة: هذا النموذج يعمل حاليًا على الواجهة فقط، يمكن ربطه بخدمة إرسال حقيقية لاحقًا).",
+    form_error: "يرجى ملء الحقول المطلوبة بشكل صحيح.",
+    demo_success: "تم استلام طلب النسخة التجريبية بنجاح. سنتواصل معك قريبًا.",
+    download_unavailable: "سيتم توفير رابط تحميل النسخة التجريبية قريبًا. يمكنك طلب النسخة التجريبية عبر نموذج التواصل.",
+    download_starting: "جاري فتح رابط التحميل...",
+    faq_eyebrow: "الأسئلة الشائعة", faq_title: "الأسئلة الشائعة",
+    faq_sub: "أجوبة سريعة على أكثر الأسئلة تكرارًا.",
+    cta_title: "جاهز لتنظيم مدرسة تعليم السياقة بطريقة أكثر احترافية؟",
+    cta_sub: "جرّب SAL AUTO ÉCOLE PRO واكتشف كيف يمكن أن تصبح إدارة المترشحين والدروس والامتحانات والدفوعات والوثائق أكثر تنظيمًا.",
+    footer_desc: "برنامج احترافي ومتكامل لتسيير مدارس تعليم السياقة: المترشحون، الدروس، الامتحانات، الدفوعات، الوثائق والتقارير في مكان واحد.",
+    footer_links: "روابط", footer_more: "المزيد", footer_contact: "تواصل معنا",
+    footer_demo: "النسخة التجريبية", footer_req: "متطلبات التشغيل",
+    footer_rights: "جميع الحقوق محفوظة", footer_made: "صُمّم بعناية لمدارس تعليم السياقة في الجزائر 🇩🇿",
+    dm_title: "طلب نسخة تجريبية", dm_sub: "املأ المعلومات التالية وسنتواصل معك.",
+    dm_send: "إرسال الطلب", cm_title: "تواصل معنا", cm_sub: "اختر طريقة التواصل المناسبة لك.",
+    chat_online: "متصل الآن", chat_ph: "اكتب سؤالك هنا...",
+    chat_greeting: "مرحبًا بك 👋 أنا SAL Assistant، مساعدك الذكي. كيف يمكنني مساعدتك في برنامج SAL AUTO ÉCOLE PRO؟",
+    chat_unknown: "لم أجد إجابة دقيقة عن هذا السؤال. يمكنك التواصل معنا مباشرة للحصول على المعلومات.",
+    chat_contact: "تواصل معنا", chat_whatsapp: "WhatsApp",
+    chat_chip_1: "ما هو البرنامج؟", chat_chip_2: "المميزات", chat_chip_3: "النسخة التجريبية",
+    chat_chip_4: "السعر", chat_chip_5: "الوثائق",
+    faq_q1: "هل البرنامج سهل الاستخدام؟",
+    faq_a1: "نعم، تم تصميم SAL AUTO ÉCOLE PRO بواجهة بسيطة وواضحة بالعربية والفرنسية، بحيث يمكن لأي مستخدم التعامل معه بسهولة دون خبرة تقنية.",
+    faq_q2: "هل يدعم العربية؟", faq_a2: "نعم، البرنامج يدعم اللغة العربية بشكل كامل مع واجهة RTL.",
+    faq_q3: "هل يدعم الفرنسية؟", faq_a3: "نعم، البرنامج يدعم اللغة الفرنسية ويمكن التبديل بين اللغتين بسهولة.",
+    faq_q4: "هل يعمل على Windows؟", faq_a4: "نعم، البرنامج يعمل على Windows 7 64-bit فما فوق حسب توافق الإصدار، بالإضافة إلى Windows 10 و Windows 11.",
+    faq_q5: "هل توجد نسخة تجريبية؟", faq_a5: "نعم، يمكنك طلب نسخة تجريبية عبر نموذج الطلب في الصفحة، أو تحميلها مباشرة من زر التحميل.",
+    faq_q6: "هل يمكن طباعة الوثائق؟", faq_a6: "نعم، البرنامج يوفر نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.",
+    faq_q7: "هل توجد نسخة احتياطية؟", faq_a7: "نعم، يمكنك إنشاء نسخة احتياطية من بيانات المدرسة والحفاظ عليها في أي وقت.",
+    faq_q8: "هل يمكن تخصيص معلومات المدرسة؟", faq_a8: "نعم، يمكنك تخصيص معلومات المدرسة والشعار والبيانات التي تظهر في الوثائق.",
+    faq_q9: "هل يوجد دعم فني؟", faq_a9: "نعم، نوفر دعمًا فنيًا للإجابة على استفساراتك ومساعدتك في استخدام البرنامج.",
+    faq_q10: "كيف يمكن الحصول على البرنامج؟", faq_a10: "يمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني أو WhatsApp، أو إرسال طلب عبر نموذج التواصل وسنوافيك بكل التفاصيل."
+  },
+  fr: {
+    logo_sub: "Gestion d'auto-écoles",
+    nav_home: "Accueil", nav_features: "Fonctionnalités", nav_candidates: "Candidats",
+    nav_docs: "Documents", nav_pricing: "Tarifs", nav_faq: "FAQ", nav_contact: "Contact",
+    hero_badge: "Logiciel Windows professionnel · Édition 2026",
+    hero_tagline: "La solution professionnelle pour gérer votre auto-école",
+    hero_desc: "Organisez vos candidats, les leçons de conduite, les examens, les paiements, les documents et les rapports dans une seule interface simple, rapide et professionnelle. De l'inscription au permis... tout au même endroit.",
+    btn_demo: "Demander une démo", btn_download: "Télécharger la démo", btn_contact: "Contactez-nous",
+    mini_1: "Simple à utiliser", mini_2: "Arabe / Français", mini_3: "Fonctionne en local sur Windows",
+    mock_dash: "Tableau de bord", mock_nav_dash: "Tableau de bord", mock_nav_cand: "Candidats",
+    mock_nav_less: "Leçons", mock_nav_exam: "Examens", mock_nav_pay: "Paiements",
+    mock_nav_doc: "Documents", mock_nav_rep: "Rapports",
+    mock_welcome: "Bienvenue sur le tableau de bord", mock_today: "Aujourd'hui",
+    mock_s1: "Candidats inscrits", mock_s2: "Leçons à venir", mock_s3: "Examens à venir",
+    mock_th1: "Candidat", mock_th2: "Statut", mock_th3: "Solde", mock_th_type: "Formation",
+    mock_st_ok: "Terminé", mock_st_run: "En cours", mock_st_wait: "En attente",
+    mock_cand_title: "Candidats — Liste complète", mock_cand_head: "Liste des candidats", mock_add: "+ Ajouter un candidat",
+    mock_exam_title: "Examens — Prochaines sessions", mock_exam_head: "Planning des examens", mock_soon: "Bientôt",
+    mock_th_exam: "Examen", mock_th_date: "Date", mock_th_n: "Candidats",
+    mock_ex1: "Théorique — Cat. B", mock_ex2: "Pratique — Cat. B", mock_ex3: "Théorique — Cat. A", mock_ex4: "Pratique — Cat. C",
+    trust_1: "Simple à utiliser", trust_2: "Arabe / Français", trust_3: "Gestion des candidats",
+    trust_4: "Documents et rapports", trust_5: "Gestion des paiements", trust_6: "Sauvegarde des données",
+    why_eyebrow: "Fonctionnalités", why_title: "Pourquoi choisir SAL AUTO ÉCOLE PRO ?",
+    why_sub: "Tout ce dont vous avez besoin pour gérer votre auto-école dans un seul logiciel, avec une interface simple et rapide qui fonctionne sur votre ordinateur.",
+    why_1_t: "Organisation des candidats", why_1_d: "Des dossiers complets pour chaque candidat : informations personnelles, photo, téléphone, type de formation et statut du dossier.",
+    why_2_t: "Suivi des leçons et rendez-vous", why_2_d: "Planification des leçons, suivi des présences et nombre de leçons effectuées et restantes pour chaque candidat.",
+    why_3_t: "Gestion des examens", why_3_d: "Enregistrement des dates, convocations, suivi des résultats et organisation des listes de candidats.",
+    why_4_t: "Suivi des paiements et soldes", why_4_d: "Enregistrement des paiements, calcul du reste à payer, suivi des dettes et impression des reçus.",
+    why_5_t: "Création de documents et rapports", why_5_d: "Des modèles et documents personnalisables et imprimables selon les besoins de l'auto-école.",
+    why_6_t: "Statistiques et tableau de bord", why_6_d: "Une vue d'ensemble rapide sur l'activité : effectifs, rendez-vous et revenus.",
+    why_7_t: "Sauvegarde", why_7_d: "Possibilité de créer une sauvegarde des données de l'auto-école et de les conserver.",
+    why_8_t: "Protection des données", why_8_d: "Les données de l'auto-école sont stockées localement sur votre ordinateur, avec gestion des droits d'accès.",
+    cand_eyebrow: "Candidats", cand_title: "Gestion complète des candidats de votre auto-école",
+    cand_sub: "Enregistrez chaque candidat en quelques minutes et suivez son dossier de l'inscription jusqu'à l'examen.",
+    cand_li_1: "Ajouter un nouveau candidat", cand_li_2: "Informations personnelles complètes", cand_li_3: "Photo du candidat",
+    cand_li_4: "Numéro de téléphone", cand_li_5: "Date d'inscription", cand_li_6: "Type de formation",
+    cand_li_7: "Suivi du statut du dossier", cand_li_8: "Suivi des paiements", cand_li_9: "Connaître le montant restant",
+    cand_li_10: "Suivi des leçons", cand_li_11: "Suivi des examens", cand_li_12: "Recherche et filtrage",
+    cand_li_13: "Modification et suppression selon les droits",
+    les_eyebrow: "Leçons et rendez-vous", les_title: "Gestion des leçons et des rendez-vous",
+    les_sub: "Organisez le planning journalier et hebdomadaire des leçons et suivez facilement les présences.",
+    les_li_1: "Planification des leçons", les_li_1d: "Créer et organiser facilement les séances de conduite.",
+    les_li_2: "Date et heure de la leçon", les_li_2d: "Définir précisément l'horaire de chaque séance.",
+    les_li_3: "Candidat", les_li_3d: "Associer chaque leçon au candidat concerné.",
+    les_li_4: "Véhicule / Moniteur", les_li_4d: "Si nécessaire, associez la leçon à un véhicule ou un moniteur.",
+    les_li_5: "Suivi des présences", les_li_5d: "Enregistrer les présences et absences des candidats.",
+    les_li_6: "Effectuées et restantes", les_li_6d: "Connaître le nombre de leçons effectuées et restantes pour chaque candidat.",
+    les_li_7: "Organisation des rendez-vous", les_li_7d: "Une vision claire des prochains rendez-vous sans conflits.",
+    les_li_8: "Alertes", les_li_8d: "Suivi des rendez-vous importants et rappel des candidats.",
+    ex_eyebrow: "Examens", ex_title: "Gestion des examens",
+    ex_sub: "Suivez les dates d'examens, les résultats des candidats et les listes de convocation au même endroit.",
+    ex_li_1: "Enregistrement des dates d'examens", ex_li_2: "Convocations des candidats", ex_li_3: "Suivi des résultats",
+    ex_li_4: "Date de l'examen", ex_li_5: "Type d'examen", ex_li_6: "Statut du candidat",
+    ex_li_7: "Organisation des listes de candidats", ex_li_8: "Impression des documents liés aux examens",
+    docs_eyebrow: "Documents", docs_title: "Créez facilement les documents de votre auto-école",
+    docs_sub: "Des modèles et documents personnalisables et imprimables selon les besoins de l'auto-école.",
+    docs_note: "Note : ce sont des modèles et documents personnalisables et imprimables selon les besoins de l'auto-école.",
+    doc_1: "Liste des candidats", doc_1s: "Listes organisées prêtes à imprimer",
+    doc_2: "Convocation à l'examen", doc_2s: "Convocations claires pour chaque candidat",
+    doc_3: "Contrat de formation", doc_3s: "Modèle de contrat personnalisable",
+    doc_4: "Fiche de suivi du candidat", doc_4s: "Résumé complet du parcours du candidat",
+    doc_5: "Demande de documents", doc_5s: "Modèles de demande prêts",
+    doc_6: "Relevés et listes des candidats", doc_6s: "Relevés organisés selon le besoin",
+    doc_7: "Reçu de paiement", doc_7s: "Reçus prêts à imprimer",
+    doc_8: "Rapports", doc_8s: "Rapports administratifs et financiers",
+    doc_9: "Documents administratifs", doc_9s: "Divers modèles administratifs",
+    doc_10: "Documents imprimables", doc_10s: "Impression directe depuis le logiciel",
+    fin_eyebrow: "Comptabilité", fin_title: "Suivez les revenus de l'auto-école et les paiements des candidats",
+    fin_sub: "Un contrôle financier clair des paiements, des soldes restants et des dépenses.",
+    fin_li_1: "Enregistrement des paiements", fin_li_1d: "Enregistrer facilement chaque paiement d'un candidat.",
+    fin_li_2: "Calcul du montant payé", fin_li_2d: "Total des paiements pour chaque candidat automatiquement.",
+    fin_li_3: "Calcul du solde restant", fin_li_3d: "Connaître le montant restant dû par chaque candidat.",
+    fin_li_4: "Suivi des dettes", fin_li_4d: "Liste des candidats n'ayant pas terminé leurs paiements.",
+    fin_li_5: "Enregistrement des dépenses", fin_li_5d: "Suivi des dépenses quotidiennes et mensuelles de l'auto-école.",
+    fin_li_6: "Suivi des revenus", fin_li_6d: "Une vision claire de tous les revenus encaissés.",
+    fin_li_7: "Statistiques financières", fin_li_7d: "Chiffres et statistiques pour vous aider à décider.",
+    fin_li_8: "Impression des reçus", fin_li_8d: "Reçus de paiement prêts à imprimer immédiatement.",
+    fin_li_9: "Rapports financiers", fin_li_9d: "Rapports par période ou par candidat.",
+    dash_eyebrow: "Tableau de bord", dash_title: "Tous les chiffres de votre auto-école sur un seul écran",
+    dash_sub: "Un tableau de bord moderne qui vous donne une image instantanée de l'activité.",
+    dash_1: "Nombre de candidats", dash_2: "Examens à venir", dash_3: "Leçons à venir",
+    dash_4: "Montants encaissés", dash_5: "Montants restants", dash_6: "Dépenses",
+    dash_soon: "Ce mois", dash_week: "Cette semaine",
+    dash_chart: "Statistiques mensuelles — Candidats",
+    m_1: "Jan", m_2: "Fév", m_3: "Mar", m_4: "Avr", m_5: "Mai", m_6: "Juin",
+    m_7: "Juil", m_8: "Août", m_9: "Sep", m_10: "Oct", m_11: "Nov", m_12: "Déc",
+    wa_eyebrow: "Contact rapide", wa_title: "Communiquez plus rapidement avec les candidats",
+    wa_sub: "Ouvrez directement une conversation WhatsApp avec le candidat pour envoyer des rappels et informations importantes.",
+    wa_li_1: "Date de l'examen", wa_li_2: "Heure de la leçon", wa_li_3: "Rappel de paiement",
+    wa_li_4: "Montant restant", wa_li_5: "Rendez-vous", wa_li_6: "Autres informations",
+    wa_card_title: "Écrivez-nous directement", wa_card_sub: "Nous vous répondons rapidement à toutes vos questions.",
+    wa_btn: "Contacter via WhatsApp",
+    req_eyebrow: "Configuration requise", req_title: "Configuration requise",
+    req_sub: "Le logiciel fonctionne en local sur votre ordinateur, sans connexion Internet permanente.",
+    req_1: "Windows 7 64-bit ou supérieur", req_1d: "Selon la compatibilité de la version.",
+    req_2: "Windows 10", req_2d: "Fonctionne bien sur les versions récentes.",
+    req_3: "Windows 11", req_3d: "Entièrement pris en charge.",
+    req_4: "Fonctionne en local sur PC", req_4d: "Application de bureau autonome.",
+    req_5: "Base de données locale", req_5d: "Les données de l'auto-école sont stockées sur votre ordinateur.",
+    req_6: "Possibilité de sauvegarde", req_6d: "Sauvegardez vos données à tout moment.",
+    demo_title: "Essayez SAL AUTO ÉCOLE PRO avant d'acheter",
+    demo_sub: "Découvrez l'interface et les fonctionnalités du logiciel par vous-même grâce à la version d'essai.",
+    price_eyebrow: "Tarifs", price_title: "Tarifs",
+    price_sub: "Choisissez la version adaptée à la taille et aux besoins de votre auto-école.",
+    price_badge: "Flexible selon vos besoins", price_name: "SAL AUTO ÉCOLE PRO",
+    price_value: "Prix selon la version et les besoins",
+    price_note: "Contactez-nous pour obtenir un devis adapté à votre auto-école.",
+    price_f1: "Gestion complète des candidats", price_f2: "Leçons et rendez-vous",
+    price_f3: "Examens et convocations", price_f4: "Paiements et reçus",
+    price_f5: "Documents et rapports imprimables", price_f6: "Support technique",
+    price_ask: "Demander le prix", price_contact: "Contactez-nous",
+    contact_eyebrow: "Contact", contact_title: "Nous sommes là pour répondre à toutes vos questions",
+    contact_sub: "Contactez-nous et nous vous répondrons dans les plus brefs délais.",
+    cc_phone: "Téléphone", cc_email: "E-mail", cc_wa: "Discussion instantanée",
+    cc_hours_t: "Horaires de réponse", cc_hours_d: "Nous nous efforçons de répondre à vos demandes dans les plus brefs délais pendant les jours ouvrables.",
+    f_name: "Nom", f_name_ph: "Votre nom complet",
+    f_school: "Nom de l'auto-école", f_school_ph: "Nom de l'auto-école",
+    f_phone: "Téléphone", f_phone_ph: "0X XX XX XX XX",
+    f_email: "E-mail", f_email_ph: "exemple@mail.com",
+    f_wilaya: "Wilaya", f_wilaya_ph: "Wilaya",
+    f_subject: "Objet du message", f_sub_1: "Demande de démo", f_sub_2: "Demande de prix",
+    f_sub_3: "Support technique", f_sub_4: "Demande générale",
+    f_message: "Message", f_message_ph: "Écrivez votre message ici...", f_send: "Envoyer",
+    form_success: "Votre demande a bien été reçue. Nous vous contacterons bientôt. (Note : ce formulaire fonctionne actuellement côté interface uniquement, il pourra être relié à un service d'envoi réel ultérieurement).",
+    form_error: "Veuillez remplir correctement les champs obligatoires.",
+    demo_success: "Votre demande de version d'essai a bien été reçue. Nous vous contacterons bientôt.",
+    download_unavailable: "Le lien de téléchargement de la version d'essai sera bientôt disponible. Vous pouvez demander la version d'essai via le formulaire de contact.",
+    download_starting: "Ouverture du lien de téléchargement...",
+    faq_eyebrow: "FAQ", faq_title: "Questions fréquentes",
+    faq_sub: "Des réponses rapides aux questions les plus posées.",
+    cta_title: "Prêt à gérer votre auto-école de manière plus professionnelle ?",
+    cta_sub: "Essayez SAL AUTO ÉCOLE PRO et découvrez comment la gestion des candidats, leçons, examens, paiements et documents peut devenir plus organisée.",
+    footer_desc: "Un logiciel professionnel et complet pour gérer votre auto-école : candidats, leçons, examens, paiements, documents et rapports au même endroit.",
+    footer_links: "Liens", footer_more: "Plus", footer_contact: "Contact",
+    footer_demo: "Version d'essai", footer_req: "Configuration requise",
+    footer_rights: "Tous droits réservés", footer_made: "Conçu avec soin pour les auto-écoles en Algérie 🇩🇿",
+    dm_title: "Demander une version d'essai", dm_sub: "Remplissez les informations ci-dessous et nous vous contacterons.",
+    dm_send: "Envoyer la demande", cm_title: "Contactez-nous", cm_sub: "Choisissez le moyen de contact qui vous convient.",
+    chat_online: "En ligne", chat_ph: "Écrivez votre question ici...",
+    chat_greeting: "Bienvenue 👋 Je suis SAL Assistant, votre assistant intelligent. Comment puis-je vous aider concernant SAL AUTO ÉCOLE PRO ?",
+    chat_unknown: "Je n'ai pas trouvé de réponse précise à cette question. Vous pouvez nous contacter directement pour obtenir l'information.",
+    chat_contact: "Contactez-nous", chat_whatsapp: "WhatsApp",
+    chat_chip_1: "C'est quoi le logiciel ?", chat_chip_2: "Fonctionnalités", chat_chip_3: "Version d'essai",
+    chat_chip_4: "Prix", chat_chip_5: "Documents",
+    faq_q1: "Le logiciel est-il facile à utiliser ?",
+    faq_a1: "Oui, SAL AUTO ÉCOLE PRO a été conçu avec une interface simple et claire en arabe et en français, accessible à tout utilisateur sans compétence technique.",
+    faq_q2: "Prend-il en charge l'arabe ?", faq_a2: "Oui, le logiciel prend entièrement en charge la langue arabe avec une interface RTL.",
+    faq_q3: "Prend-il en charge le français ?", faq_a3: "Oui, le logiciel prend en charge le français et permet de basculer facilement entre les deux langues.",
+    faq_q4: "Fonctionne-t-il sur Windows ?", faq_a4: "Oui, le logiciel fonctionne sur Windows 7 64-bit ou supérieur selon la compatibilité de la version, ainsi que sur Windows 10 et Windows 11.",
+    faq_q5: "Existe-t-il une version d'essai ?", faq_a5: "Oui, vous pouvez demander une version d'essai via le formulaire, ou la télécharger directement depuis le bouton de téléchargement.",
+    faq_q6: "Peut-on imprimer les documents ?", faq_a6: "Oui, le logiciel propose des modèles et documents personnalisables et imprimables selon les besoins de l'auto-école.",
+    faq_q7: "Y a-t-il une sauvegarde ?", faq_a7: "Oui, vous pouvez créer une sauvegarde des données de l'auto-école et les conserver à tout moment.",
+    faq_q8: "Peut-on personnaliser les informations de l'auto-école ?", faq_a8: "Oui, vous pouvez personnaliser les informations de l'auto-école, le logo et les données affichées dans les documents.",
+    faq_q9: "Y a-t-il un support technique ?", faq_a9: "Oui, nous fournissons un support technique pour répondre à vos questions et vous aider à utiliser le logiciel.",
+    faq_q10: "Comment obtenir le logiciel ?", faq_a10: "Vous pouvez nous contacter par téléphone, e-mail ou WhatsApp, ou envoyer une demande via le formulaire de contact et nous vous fournirons tous les détails."
+  }
+};
+
+let currentLang = "ar";
+
+function applyLanguage(lang){
+  currentLang = (lang === "fr") ? "fr" : "ar";
+  const dict = I18N[currentLang];
+  const html = document.documentElement;
+
+  html.lang = currentLang;
+  html.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const key = el.getAttribute("data-i18n-ph");
+    if(dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+  });
+  document.querySelectorAll(".lang-switch button").forEach(b=>{
+    b.classList.toggle("active", b.dataset.lang === currentLang);
+  });
+
+  document.title = currentLang === "ar"
+    ? "SAL AUTO ÉCOLE PRO — برنامج تسيير مدارس تعليم السياقة"
+    : "SAL AUTO ÉCOLE PRO — Logiciel de gestion d'auto-écoles";
+
+  updateWhatsAppLinks();
+  buildFAQ();
+  buildChatChips();
+  try{ localStorage.setItem("sal_lang", currentLang); }catch(e){}
+}
+
+function updateWhatsAppLinks(){
+  const msg = encodeURIComponent(CONFIG.whatsappMessage[currentLang] || CONFIG.whatsappMessage.ar);
+  const url = "https://wa.me/" + CONFIG.whatsapp + "?text=" + msg;
+  document.querySelectorAll("[data-whatsapp]").forEach(el=>{
+    if(el.tagName === "A"){ el.href = url; el.target = "_blank"; el.rel = "noopener"; }
+    else{ el.onclick = ()=>{ window.open(url, "_blank", "noopener"); }; }
+  });
+  const ccWa = document.getElementById("ccWa"); if(ccWa) ccWa.href = url;
+  const cmWa = document.getElementById("cmWa"); if(cmWa) cmWa.href = url;
+}
+
+function initContactLinks(){
+  const tel = "tel:" + CONFIG.phoneCall;
+  const mail = "mailto:" + CONFIG.email;
+  const set = (id, attr, val)=>{ const el = document.getElementById(id); if(el) el.setAttribute(attr, val); };
+  set("ccPhone","href",tel); set("ccMail","href",mail);
+  set("cmPhone","href",tel); set("cmMail","href",mail);
+  const setText = (id, txt)=>{ const el = document.getElementById(id); if(el) el.textContent = txt; };
+  setText("phoneDisplay", CONFIG.phoneDisplay);
+  setText("emailDisplay", CONFIG.email);
+  setText("cmPhoneTxt", CONFIG.phoneDisplay);
+  setText("cmEmail", CONFIG.email);
+  document.querySelectorAll(".footer-phone").forEach(a=>{ a.href = tel; a.textContent = CONFIG.phoneDisplay; });
+  document.querySelectorAll(".footer-email").forEach(a=>{ a.href = mail; a.textContent = CONFIG.email; });
+}
+
+function initDownloadButtons(){
+  document.querySelectorAll("[data-download-demo]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      if(CONFIG.demoDownloadUrl && CONFIG.demoDownloadUrl.trim() !== ""){
+        showToast(I18N[currentLang].download_starting, "ok");
+        window.open(CONFIG.demoDownloadUrl, "_blank", "noopener");
+      }else{
+        showToast(I18N[currentLang].download_unavailable, "info");
+      }
+    });
+  });
+}
+
+let toastTimer = null;
+function showToast(message, type){
+  let toast = document.getElementById("salToast");
+  if(!toast){
+    toast = document.createElement("div");
+    toast.id = "salToast";
+    toast.style.cssText =
+      "position:fixed;inset-block-end:30px;inset-inline-start:50%;transform:translateX(-50%) translateY(20px);"+
+      "background:#0a0e1a;color:#fff;padding:16px 26px;border-radius:14px;font-size:.9rem;font-weight:600;"+
+      "z-index:2000;max-width:min(560px,calc(100vw - 34px));box-shadow:0 6px 0 0 rgba(0,0,0,.4), 0 20px 50px -12px rgba(0,0,0,.6);"+
+      "opacity:0;transition:.35s cubic-bezier(.2,.9,.25,1);line-height:1.6;text-align:center;pointer-events:none";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.style.background = (type === "ok")
+    ? "linear-gradient(180deg,#10b981,#059669)"
+    : (type === "error"
+      ? "linear-gradient(180deg,#f43f5e,#e11d48)"
+      : "linear-gradient(180deg,#1e293b,#0a0e1a)");
+  requestAnimationFrame(()=>{
+    toast.style.opacity = "1";
+    toast.style.transform = "translateX(-50%) translateY(0)";
+  });
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(-50%) translateY(20px)";
+  }, 5200);
+}
+
+function buildFAQ(){
+  const list = document.getElementById("faqList");
+  if(!list) return;
+  const d = I18N[currentLang];
+  const items = [];
+  for(let i=1;i<=10;i++){ items.push({ q: d["faq_q"+i], a: d["faq_a"+i] }); }
+  list.innerHTML = items.map((it, i)=>`
+    <div class="faq-item reveal ${i<3?'d'+(i+1):''}">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span>${escapeHTML(it.q)}</span>
+        <span class="faq-ico">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </span>
+      </button>
+      <div class="faq-a"><p>${escapeHTML(it.a)}</p></div>
+    </div>
+  `).join("");
+  list.querySelectorAll(".faq-q").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const item = btn.closest(".faq-item");
+      const isOpen = item.classList.contains("open");
+      list.querySelectorAll(".faq-item").forEach(x=>{
+        x.classList.remove("open");
+        const q = x.querySelector(".faq-q");
+        if(q) q.setAttribute("aria-expanded","false");
+      });
+      if(!isOpen){ item.classList.add("open"); btn.setAttribute("aria-expanded","true"); }
+    });
+  });
+  list.querySelectorAll(".reveal").forEach(el=>observer && observer.observe(el));
+}
+
+function escapeHTML(str){
+  return String(str).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+const FAQ_DATA = [
+  { keywords: ["ما هو","البرنامج","تعريف","وش هو","شنو","c'est quoi","logiciel","presentation","sal auto"], answer: {
+    ar: "SAL AUTO ÉCOLE PRO هو برنامج Windows احترافي ومتكامل لتسيير مدارس تعليم السياقة: إدارة المترشحين، الدروس، الامتحانات، الدفوعات، الوثائق والتقارير من واجهة واحدة.",
+    fr: "SAL AUTO ÉCOLE PRO est un logiciel Windows professionnel et complet pour gérer une auto-école : candidats, leçons, examens, paiements, documents et rapports dans une seule interface." } },
+  { keywords: ["مميزات","ميزات","خصائص","وظائف","fonctionnalites","features","avantages"], answer: {
+    ar: "أهم المميزات: إدارة المترشحين، جدولة الدروس، إدارة الامتحانات، متابعة الدفوعات والأرصدة، إنشاء الوثائق والتقارير، لوحة تحكم بإحصائيات، ونسخ احتياطي للبيانات.",
+    fr: "Principales fonctionnalités : gestion des candidats, planification des leçons, gestion des examens, suivi des paiements et soldes, génération de documents et rapports, tableau de bord statistique et sauvegarde des données." } },
+  { keywords: ["windows","ويندوز","نظام","compatibilite","systeme","7","10","11"], answer: {
+    ar: "نعم، البرنامج يعمل على Windows 7 64-bit فما فوق حسب توافق الإصدار، وأيضًا على Windows 10 و Windows 11. يعمل محليًا على جهازك.",
+    fr: "Oui, le logiciel fonctionne sur Windows 7 64-bit ou supérieur selon la compatibilité de la version, ainsi que sur Windows 10 et Windows 11. Il fonctionne en local sur votre machine." } },
+  { keywords: ["تجريبية","نسخة تجريبية","ديمو","demo","essai","tester","تجربة","تحميل","telecharger"], answer: {
+    ar: "نعم، توجد نسخة تجريبية متاحة للتحميل. اضغط على زر «تحميل النسخة التجريبية» في الصفحة، أو اطلبها عبر نموذج «طلب نسخة تجريبية».",
+    fr: "Oui, une version d'essai est disponible en téléchargement. Cliquez sur le bouton « Télécharger la démo » sur la page, ou demandez-la via le formulaire." } },
+  { keywords: ["سعر","الثمن","كم","تسعيرة","prix","tarif","combien","cout"], answer: {
+    ar: "للحصول على السعر الحالي للنسخة المناسبة لمدرستك، اضغط على زر «اسأل عن السعر» أو تواصل معنا مباشرة عبر الهاتف أو WhatsApp.",
+    fr: "Pour obtenir le tarif actuel de la version adaptée à votre auto-école, cliquez sur « Demander le prix » ou contactez-nous directement par téléphone ou WhatsApp." } },
+  { keywords: ["دعم","مساعدة","دعم فني","support","assistance","aide"], answer: {
+    ar: "نعم، نوفر دعمًا فنيًا للإجابة على استفساراتك ومساعدتك في استخدام البرنامج. يمكنك التواصل معنا عبر الهاتف أو البريد الإلكتروني أو WhatsApp.",
+    fr: "Oui, nous fournissons un support technique pour répondre à vos questions et vous aider à utiliser le logiciel. Vous pouvez nous contacter par téléphone, e-mail ou WhatsApp." } },
+  { keywords: ["عربية","عربي","لغة","arabe","langue arabe","rtl"], answer: {
+    ar: "نعم، البرنامج يدعم اللغة العربية بشكل كامل مع واجهة RTL مناسبة.",
+    fr: "Oui, le logiciel prend entièrement en charge la langue arabe avec une interface RTL adaptée." } },
+  { keywords: ["فرنسية","فرنسي","francais","french","langue francaise"], answer: {
+    ar: "نعم، البرنامج يدعم اللغة الفرنسية، ويمكن التبديل بين العربية والفرنسية بسهولة.",
+    fr: "Oui, le logiciel prend en charge le français, et vous pouvez basculer facilement entre l'arabe et le français." } },
+  { keywords: ["طباعة","طبع","وثائق","مستندات","impression","imprimer","documents"], answer: {
+    ar: "نعم، يمكن طباعة الوثائق. البرنامج يوفر نماذج ووثائق قابلة للتخصيص والطباعة حسب احتياجات المدرسة.",
+    fr: "Oui, les documents sont imprimables. Le logiciel propose des modèles personnalisables et imprimables selon les besoins de l'auto-école." } },
+  { keywords: ["مترشحين","مترشح","قائمة","candidats","candidat","liste"], answer: {
+    ar: "نعم، يمكن إدارة المترشحين بشكل كامل: إضافة، تعديل، حذف حسب الصلاحيات، مع متابعة الحالة، الدفوعات، الدروس والامتحانات.",
+    fr: "Oui, la gestion des candidats est complète : ajout, modification, suppression selon les droits, avec suivi du statut, des paiements, des leçons et des examens." } },
+  { keywords: ["دفوعات","دفع","محاسبة","رصيد","مالي","paiement","comptabilite","solde","finance"], answer: {
+    ar: "نعم، يمكن متابعة الدفوعات: تسجيل الدفعات، حساب المبلغ المدفوع والمتبقي، متابعة الديون، طباعة الوصولات وإعداد تقارير مالية.",
+    fr: "Oui, le suivi des paiements est disponible : enregistrement, calcul du montant payé et restant, suivi des dettes, impression des reçus et rapports financiers." } },
+  { keywords: ["امتحان","امتحانات","نتائج","استدعاء","examen","examens","resultats","convocation"], answer: {
+    ar: "نعم، يمكن إدارة الامتحانات: تسجيل المواعيد، الاستدعاءات، متابعة النتائج وتنظيم قوائم المترشحين، مع إمكانية طباعة الوثائق المتعلقة.",
+    fr: "Oui, la gestion des examens est disponible : dates, convocations, suivi des résultats et organisation des listes, avec impression des documents associés." } },
+  { keywords: ["نسخ احتياطي","احتياطي","حماية البيانات","sauvegarde","backup"], answer: {
+    ar: "نعم، يمكن إنشاء نسخة احتياطية من بيانات المدرسة والحفاظ عليها في أي وقت.",
+    fr: "Oui, vous pouvez créer une sauvegarde des données de l'auto-école et les conserver à tout moment." } },
+  { keywords: ["whatsapp","واتساب","واتس","رسائل","message"], answer: {
+    ar: "نعم، يمكن فتح WhatsApp لإرسال رسائل للمترشحين بخصوص موعد الامتحان، موعد الدرس، تذكير بالدفع، المبلغ المتبقي، المواعيد ومعلومات أخرى.",
+    fr: "Oui, vous pouvez ouvrir WhatsApp pour envoyer des messages aux candidats concernant la date d'examen, l'heure de la leçon, un rappel de paiement, le montant restant, les rendez-vous et d'autres informations." } },
+  { keywords: ["طلب","كيف أحصل","شراء","اشتر","commander","acheter","obtenir"], answer: {
+    ar: "يمكنك طلب البرنامج عبر نموذج «طلب نسخة تجريبية» في الصفحة، أو التواصل معنا مباشرة عبر الهاتف، البريد الإلكتروني أو WhatsApp.",
+    fr: "Vous pouvez commander le logiciel via le formulaire « Demander une démo » sur la page, ou nous contacter directement par téléphone, e-mail ou WhatsApp." } },
+  { keywords: ["دروس","مواعيد","جدول","حضور","lecons","rendez-vous","planning","presence"], answer: {
+    ar: "نعم، يمكن إدارة الدروس والمواعيد: جدولة الدروس، تحديد التاريخ والوقت، ربط الدرس بالمترشح، متابعة الحضور ومعرفة الدروس المنجزة والمتبقية.",
+    fr: "Oui, la gestion des leçons et rendez-vous est disponible : planification, date et heure, association au candidat, suivi des présences et leçons effectuées/restantes." } },
+  { keywords: ["تخصيص","معلومات المدرسة","شعار","logo","personnalisation"], answer: {
+    ar: "نعم، يمكن تخصيص معلومات المدرسة والبيانات التي تظهر في الوثائق والتقارير.",
+    fr: "Oui, vous pouvez personnaliser les informations de l'auto-école et les données affichées dans les documents et rapports." } }
+];
+
+function getBotAnswer(text){
+  const t = (text || "").toLowerCase().trim();
+  if(!t) return null;
+  let best = null, bestScore = 0;
+  FAQ_DATA.forEach(item=>{
+    let score = 0;
+    item.keywords.forEach(k=>{
+      const key = k.toLowerCase();
+      if(t.includes(key)) score += key.length;
+    });
+    if(score > bestScore){ bestScore = score; best = item; }
+  });
+  if(best && bestScore > 0){ return { answer: best.answer[currentLang], found: true }; }
+  return { answer: I18N[currentLang].chat_unknown, found: false };
+}
+
+const chatWin = document.getElementById("chatWin");
+const chatBody = document.getElementById("chatBody");
+const chatInput = document.getElementById("chatInput");
+const chatForm = document.getElementById("chatForm");
+const chatChips = document.getElementById("chatChips");
+
+function addMessage(text, from, withActions){
+  const div = document.createElement("div");
+  div.className = "msg " + (from === "user" ? "user" : "bot");
+  div.innerHTML = escapeHTML(text).replace(/\n/g,"<br>");
+  if(withActions){
+    const actions = document.createElement("div");
+    actions.className = "msg-actions";
+    const waBtn = document.createElement("a");
+    waBtn.className = "a-wa";
+    waBtn.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.whatsappMessage[currentLang] || CONFIG.whatsappMessage.ar);
+    waBtn.target = "_blank";
+    waBtn.rel = "noopener";
+    waBtn.textContent = I18N[currentLang].chat_whatsapp;
+    const mailBtn = document.createElement("a");
+    mailBtn.className = "a-mail";
+    mailBtn.href = "mailto:" + CONFIG.email;
+    mailBtn.textContent = I18N[currentLang].chat_contact;
+    actions.appendChild(waBtn);
+    actions.appendChild(mailBtn);
+    div.appendChild(actions);
+  }
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addTyping(){
+  const div = document.createElement("div");
+  div.className = "typing";
+  div.id = "typingIndicator";
+  div.innerHTML = "<i></i><i></i><i></i>";
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+function removeTyping(){ const t = document.getElementById("typingIndicator"); if(t) t.remove(); }
+
+function botReply(userText){
+  addTyping();
+  setTimeout(()=>{
+    removeTyping();
+    const res = getBotAnswer(userText);
+    addMessage(res.answer, "bot", !res.found);
+  }, 620);
+}
+
+function buildChatChips(){
+  if(!chatChips) return;
+  const d = I18N[currentLang];
+  const chips = [
+    { label: d.chat_chip_1, query: d.chat_chip_1 },
+    { label: d.chat_chip_2, query: d.chat_chip_2 },
+    { label: d.chat_chip_3, query: d.chat_chip_3 },
+    { label: d.chat_chip_4, query: d.chat_chip_4 },
+    { label: d.chat_chip_5, query: d.chat_chip_5 }
+  ];
+  chatChips.innerHTML = chips.map(c=>`<button type="button" class="chip">${escapeHTML(c.label)}</button>`).join("");
+  chatChips.querySelectorAll(".chip").forEach((btn,i)=>{
+    btn.addEventListener("click", ()=>{
+      const q = chips[i].query;
+      addMessage(q, "user");
+      botReply(q);
+    });
+  });
+}
+
+let chatStarted = false;
+function openChat(){
+  chatWin.classList.add("open");
+  if(!chatStarted){
+    chatStarted = true;
+    setTimeout(()=>{ addMessage(I18N[currentLang].chat_greeting, "bot"); }, 260);
+  }
+  setTimeout(()=>{ chatInput && chatInput.focus(); }, 380);
+}
+function closeChat(){ chatWin.classList.remove("open"); }
+function toggleChat(){ chatWin.classList.contains("open") ? closeChat() : openChat(); }
+
+if(chatForm){
+  chatForm.addEventListener("submit", e=>{
+    e.preventDefault();
+    const val = chatInput.value.trim();
+    if(!val) return;
+    addMessage(val, "user");
+    chatInput.value = "";
+    botReply(val);
+  });
+}
+document.getElementById("chatFloat").addEventListener("click", toggleChat);
+document.getElementById("chatClose").addEventListener("click", closeChat);
+
+document.querySelectorAll("[data-open-chat]").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    openChat();
+    setTimeout(()=>{
+      const q = currentLang === "ar" ? "كم سعر البرنامج؟" : "Quel est le prix du logiciel ?";
+      addMessage(q, "user");
+      botReply(q);
+    }, 420);
+  });
+});
+
+function openModal(id){
+  const m = document.getElementById(id);
+  if(!m) return;
+  m.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(el){
+  const m = el ? el.closest(".modal") : null;
+  if(m){ m.classList.remove("open"); document.body.style.overflow = ""; }
+}
+
+document.querySelectorAll("[data-open-modal]").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    openModal(btn.getAttribute("data-open-modal"));
+    closeMobileMenu();
+  });
+});
+document.querySelectorAll("[data-close-modal]").forEach(btn=>{
+  btn.addEventListener("click", ()=>closeModal(btn));
+});
+document.querySelectorAll(".modal").forEach(m=>{
+  m.addEventListener("click", e=>{
+    if(e.target === m) closeModal(m.querySelector("[data-close-modal]"));
+  });
+});
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape"){
+    document.querySelectorAll(".modal.open").forEach(m=>{
+      m.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+    closeChat();
+    closeMobileMenu();
+  }
+});
+
+function handleForm(formId, msgId, successKey){
+  const form = document.getElementById(formId);
+  if(!form) return;
+  const msg = document.getElementById(msgId);
+  form.addEventListener("submit", e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    let valid = true;
+    form.querySelectorAll("[required]").forEach(f=>{
+      if(!f.value.trim()){ valid = false; f.style.borderColor = "#fca5a5"; }
+      else{ f.style.borderColor = ""; }
+    });
+    if(!valid){
+      if(msg){ msg.className = "form-msg info show"; msg.textContent = I18N[currentLang].form_error; }
+      return;
+    }
+    if(msg){ msg.className = "form-msg ok show"; msg.textContent = I18N[currentLang][successKey]; }
+    form.reset();
+    setTimeout(()=>{ if(msg) msg.classList.remove("show"); }, 7000);
+  });
+}
+handleForm("contactForm", "contactMsg", "form_success");
+handleForm("demoForm", "demoMsg", "demo_success");
+
+document.querySelectorAll(".lang-switch button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{ applyLanguage(btn.dataset.lang); });
+});
+
+const navbar = document.getElementById("navbar");
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+const topFloat = document.getElementById("topFloat");
+
+function closeMobileMenu(){
+  burger.classList.remove("open");
+  burger.setAttribute("aria-expanded","false");
+  mobileMenu.classList.remove("open");
+}
+burger.addEventListener("click", ()=>{
+  const open = burger.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+  mobileMenu.classList.toggle("open", open);
+});
+mobileMenu.querySelectorAll("a").forEach(a=>{
+  a.addEventListener("click", closeMobileMenu);
+});
+
+let ticking = false;
+window.addEventListener("scroll", ()=>{
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(()=>{
+    const y = window.scrollY;
+    navbar.classList.toggle("scrolled", y > 12);
+    topFloat.classList.toggle("show", y > 520);
+    ticking = false;
+  });
+}, { passive:true });
+
+topFloat.addEventListener("click", ()=>{
+  window.scrollTo({ top:0, behavior:"smooth" });
+});
+
+let observer = null;
+if("IntersectionObserver" in window){
+  observer = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        en.target.classList.add("visible");
+        observer.unobserve(en.target);
+      }
+    });
+  }, { threshold:.12, rootMargin:"0px 0px -60px 0px" });
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+}else{
+  document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener("click", e=>{
+    const id = a.getAttribute("href");
+    if(id === "#" || id.length < 2) return;
+    const target = document.querySelector(id);
+    if(!target) return;
+    e.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - 84;
+    window.scrollTo({ top, behavior:"smooth" });
+  });
+});
+
+function applyPrice(){
+  const el = document.getElementById("priceValue");
+  if(!el) return;
+  if(CONFIG.price && String(CONFIG.price).trim() !== ""){
+    el.textContent = CONFIG.price + " " + (CONFIG.priceCurrency || "DA");
+  }else{
+    el.textContent = I18N[currentLang].price_value;
+    el.setAttribute("data-i18n","price_value");
+  }
+}
+
+(function init(){
+  let saved = "ar";
+  try{ saved = localStorage.getItem("sal_lang") || "ar"; }catch(e){}
+  initContactLinks();
+  updateWhatsAppLinks();
+  initDownloadButtons();
+  buildChatChips();
+  applyLanguage(saved);
+  applyPrice();
+  document.querySelectorAll(".lang-switch button").forEach(b=>{
+    b.addEventListener("click", ()=>setTimeout(applyPrice, 30));
+  });
+  console.log("%c SAL AUTO ÉCOLE PRO ", "background:#6366f1;color:#fff;padding:4px 10px;border-radius:6px;font-weight:bold;", "Landing Page prête ✔");
+})();
+</script>
+
+</body>
+</html>
